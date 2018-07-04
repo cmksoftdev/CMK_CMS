@@ -1,0 +1,3 @@
+[submodule "DomBauMeister"]
+	path = DomBauMeister
+	url = https://github.com/cmksoftdev/DomBauMeister.git
