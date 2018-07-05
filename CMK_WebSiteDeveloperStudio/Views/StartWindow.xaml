@@ -12,10 +12,10 @@
             <ColumnDefinition Width="235*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.ColumnSpan="2">
-            <Label HorizontalAlignment="Center">Willkommen</Label>
-            <Button Command="{Binding com.Command}" CommandParameter="HandleLoadClick">Neues Projekt</Button>
-            <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick">Projekt laden</Button>
-            <Button Command="{Binding com.Command}" CommandParameter="HandleLoadClick">Einstellungen</Button>
+            <Label HorizontalAlignment="Center" Content="{Binding Label_Text}"></Label>
+            <Button Command="{Binding com.Command}" CommandParameter="HandleLoadClick" Content="{Binding B1}"></Button>
+            <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B2}"></Button>
+            <Button Command="{Binding com.Command}" CommandParameter="HandleLoadClick" Content="{Binding B3}"></Button>
         </StackPanel>
     </Grid>
 </Window>

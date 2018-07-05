@@ -62,6 +62,9 @@
     </Compile>
     <Compile Include="BusinessLogicLayer\Core.cs" />
     <Compile Include="Configs\Config.cs" />
+    <Compile Include="DTOs\Language.cs" />
+    <Compile Include="DTOs\Languages.cs" />
+    <Compile Include="Services\TranslationService.cs" />
     <Compile Include="ViewModels\StartWindow_ViewModel.cs" />
     <Compile Include="Views\Attributes.xaml.cs">
       <DependentUpon>Attributes.xaml</DependentUpon>
@@ -114,9 +117,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Views\Attributes.xaml">
       <SubType>Designer</SubType>
@@ -150,6 +151,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Languages.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

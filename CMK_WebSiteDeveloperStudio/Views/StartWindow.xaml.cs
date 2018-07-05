@@ -20,10 +20,10 @@ namespace CMK_WebSiteDeveloperStudio.Views
     /// </summary>
     public partial class StartWindow : Window
     {
-        public StartWindow()
+        public StartWindow(StartWindow_ViewModel vm)
         {
             InitializeComponent();
-            this.DataContext = new StartWindow_ViewModel();
+            this.DataContext = vm;
         }
     }
 }

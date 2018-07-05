@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+ <L>
+  <Language>
+    <Symbol>DE</Symbol>
+    <Translations>
+      <TL>Ein Fehler ist aufgetreten: </TL>
+      <TL>Einstellungen</TL>
+      <TL>Neues Projekt</TL>
+      <TL>Projekt laden</TL>
+      <TL>Willkommen!</TL>
+    </Translations>
+  </Language>
+  <Language>
+    <Symbol>EN</Symbol>
+    <Translations>
+      <TL>There was an exception: </TL>
+      <TL>Settings</TL>
+      <TL>New Project</TL>
+      <TL>Load Project</TL>
+      <TL>Welcome!</TL>
+    </Translations>
+  </Language>
+ </L>
+</Languages>

@@ -1,5 +1,7 @@
 ﻿using CMK.Services;
 using CMK_WebSiteDeveloperStudio.Configs;
+using CMK_WebSiteDeveloperStudio.Services;
+using CMK_WebSiteDeveloperStudio.ViewModels;
 using CMK_WebSiteDeveloperStudio.Views;
 using System;
 using System.Collections.Generic;
@@ -24,10 +26,11 @@ namespace CMK_WebSiteDeveloperStudio
             const string CONFIG_FILE_NAME = "config.xml";
             const string DEFAULT_CONFIG = "<Config><Language>DE</Language><ProjectPath>E:\\CMK WSDS Projects\\</ProjectPath></Config>";
 
+
+
             try
             {
                 var tempPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + CONFIG_PATH_NAME;
-                var test = Directory.Exists(tempPath);
                 if (!Directory.Exists(tempPath))
                 {
                     Directory.CreateDirectory(tempPath);
@@ -43,12 +46,17 @@ namespace CMK_WebSiteDeveloperStudio
                 {
                     config = serializer.Deserialize(stream) as Config;                    
                 }
-                var mainWindow = new StartWindow();
+                var translationService = new TranslationService();
+                translationService.Initialize(config.Language);
+
+                var startWindow_vm = new StartWindow_ViewModel(translationService);
+                var mainWindow = new StartWindow(startWindow_vm);
                 mainWindow.Show();
+                throw new Exception("test");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Es ist ein Fehler aufgetreten:\n" + ex);
+                MessageBox.Show("ERROR: " + ex);
             }
         }
     }
