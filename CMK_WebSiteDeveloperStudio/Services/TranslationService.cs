@@ -11,13 +11,15 @@ namespace CMK_WebSiteDeveloperStudio.Services
 {
     public class TranslationService
     {
+        private const string CONFIG_NAME = "Languages.xml";
+
         private Languages languages;
         private string localLanguage;
 
         public void Initialize()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Languages));
-            using (var stream = File.Open("Languages.xml", FileMode.Open))
+            using (var stream = File.Open(CONFIG_NAME, FileMode.Open))
             {
                 languages = serializer.Deserialize(stream) as Languages;
             }
@@ -27,7 +29,7 @@ namespace CMK_WebSiteDeveloperStudio.Services
         public void Initialize(string language)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Languages));
-            using (var stream = File.Open("Languages.xml", FileMode.Open))
+            using (var stream = File.Open(CONFIG_NAME, FileMode.Open))
             {
                 languages = serializer.Deserialize(stream) as Languages;
             }

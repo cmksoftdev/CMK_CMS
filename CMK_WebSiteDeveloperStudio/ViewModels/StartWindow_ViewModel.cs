@@ -1,6 +1,7 @@
 ﻿using CMK.Services;
 using CMK_WebSiteDeveloperStudio.BusinessLogicLayer;
 using CMK_WebSiteDeveloperStudio.DTOs;
+using CMK_WebSiteDeveloperStudio.Enums;
 using CMK_WebSiteDeveloperStudio.Services;
 using System;
 using System.Collections.Generic;
@@ -44,7 +45,7 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
 
         public void HandleLoadClick()
         {
-            MessageBox.Show(SelectedProject.Name);
+            core.CreateWindow(WindowEnum.ProjectView);
         }
 
         public void HandleNewClick()

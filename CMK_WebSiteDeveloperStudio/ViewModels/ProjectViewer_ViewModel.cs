@@ -12,6 +12,8 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
     {
         public CommandMethodReflectionProvider com { get; }
 
+        public string Title => core.GetTranslation(5);
+
         private Core core;
 
         public ProjectViewer_ViewModel(Core core)

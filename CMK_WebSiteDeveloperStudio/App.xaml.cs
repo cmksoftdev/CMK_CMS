@@ -48,7 +48,7 @@ namespace CMK_WebSiteDeveloperStudio
                 var translationService = new TranslationService();
                 translationService.Initialize(config.Language);
                 var projectLoader = new ProjectLoader(config);
-                var core = new Core(projectLoader, translationService);
+                var core = new Core(config, projectLoader, translationService);
 
                 var startWindow_vm = new StartWindow_ViewModel(core);
                 var mainWindow = new StartWindow(startWindow_vm);

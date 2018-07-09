@@ -1,4 +1,6 @@
-﻿using CMK_WebSiteDeveloperStudio.DTOs;
+﻿using CMK_WebSiteDeveloperStudio.Configs;
+using CMK_WebSiteDeveloperStudio.DTOs;
+using CMK_WebSiteDeveloperStudio.Enums;
 using CMK_WebSiteDeveloperStudio.Services;
 using System;
 using System.Collections.Generic;
@@ -12,8 +14,11 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
     {
         private ProjectLoader projectLoader;
         private TranslationService translationService;
+        private WindowManager windowManager;
+        public Config Config { get; }
 
         public Core(
+            Config config,
             ProjectLoader projectLoader,
             TranslationService translationService
             )
@@ -23,8 +28,10 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
             if (translationService == null)
                 throw new NullReferenceException(translationService.GetType() + " was null.");
 
+            this.Config = config;
             this.projectLoader = projectLoader;
             this.translationService = translationService;
+            windowManager = new WindowManager(this);
         }
 
         public List<Project> GetProjects()
@@ -35,6 +42,11 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         public string GetTranslation(int i)
         {
             return translationService.Get(i);
+        }
+
+        public void CreateWindow(WindowEnum winEnum)
+        {
+            windowManager.CreateWindow(winEnum);
         }
     }
 }

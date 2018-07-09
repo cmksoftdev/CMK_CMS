@@ -62,11 +62,14 @@
     </Compile>
     <Compile Include="BusinessLogicLayer\Core.cs" />
     <Compile Include="Configs\Config.cs" />
+    <Compile Include="Configs\ProjectConfig.cs" />
     <Compile Include="DTOs\Language.cs" />
     <Compile Include="DTOs\Languages.cs" />
     <Compile Include="DTOs\Project.cs" />
+    <Compile Include="Enums\WindowEnum.cs" />
     <Compile Include="Services\ProjectLoader.cs" />
     <Compile Include="Services\TranslationService.cs" />
+    <Compile Include="Services\WindowManager.cs" />
     <Compile Include="ViewModels\ProjectViewer_ViewModel.cs" />
     <Compile Include="ViewModels\StartWindow_ViewModel.cs" />
     <Compile Include="Views\Attributes.xaml.cs">
