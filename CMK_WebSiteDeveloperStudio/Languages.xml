@@ -9,6 +9,9 @@
       <TL>Neues Projekt</TL>
       <TL>Projekt laden</TL>
       <TL>Willkommen!</TL>
+      <TL>Projekte</TL>
+      <TL>Name</TL>
+      <TL>Pfad</TL>
     </Translations>
   </Language>
   <Language>
@@ -19,7 +22,23 @@
       <TL>New Project</TL>
       <TL>Load Project</TL>
       <TL>Welcome!</TL>
+      <TL>Projects</TL>
+      <TL>Name</TL>
+      <TL>Path</TL>
     </Translations>
   </Language>
+   <Language>
+     <Symbol>RU</Symbol>
+     <Translations>
+       <TL>Произошла ошибка: </TL>
+       <TL>установка</TL>
+       <TL>Новый проект</TL>
+       <TL>Загрузить проект</TL>
+       <TL>Добро пожаловать!</TL>
+       <TL>Добро пожаловать!</TL>
+       <TL>Name</TL>
+       <TL>Path</TL>
+     </Translations>
+   </Language>
  </L>
 </Languages>

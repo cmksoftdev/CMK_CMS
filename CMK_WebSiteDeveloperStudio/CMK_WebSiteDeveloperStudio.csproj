@@ -64,7 +64,10 @@
     <Compile Include="Configs\Config.cs" />
     <Compile Include="DTOs\Language.cs" />
     <Compile Include="DTOs\Languages.cs" />
+    <Compile Include="DTOs\Project.cs" />
+    <Compile Include="Services\ProjectLoader.cs" />
     <Compile Include="Services\TranslationService.cs" />
+    <Compile Include="ViewModels\ProjectViewer_ViewModel.cs" />
     <Compile Include="ViewModels\StartWindow_ViewModel.cs" />
     <Compile Include="Views\Attributes.xaml.cs">
       <DependentUpon>Attributes.xaml</DependentUpon>

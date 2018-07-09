@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMK_WebSiteDeveloperStudio.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,10 @@ namespace CMK_WebSiteDeveloperStudio.Views
     /// </summary>
     public partial class ProjectViewer : Window
     {
-        public ProjectViewer()
+        public ProjectViewer(ProjectViewer_ViewModel vm)
         {
             InitializeComponent();
+            this.DataContext = vm;
         }
     }
 }

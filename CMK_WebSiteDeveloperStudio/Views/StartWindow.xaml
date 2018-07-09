@@ -5,17 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMK_WebSiteDeveloperStudio.Views"
         mc:Ignorable="d"
-        Title="StartWindow" Height="300" Width="300">
+        Title="StartWindow" Height="300" Width="300" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="57*"/>
             <ColumnDefinition Width="235*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.ColumnSpan="2">
+        <StackPanel Grid.ColumnSpan="2" Height="269" VerticalAlignment="Top">
             <Label HorizontalAlignment="Center" Content="{Binding Label_Text}"></Label>
-            <Button Command="{Binding com.Command}" CommandParameter="HandleLoadClick" Content="{Binding B1}"></Button>
-            <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B2}"></Button>
-            <Button Command="{Binding com.Command}" CommandParameter="HandleLoadClick" Content="{Binding B3}"></Button>
+            <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B1}"></Button>
+            <Button Command="{Binding com.Command}" CommandParameter="HandleLoadClick" Content="{Binding B2}"></Button>
+            <Button Command="{Binding com.Command}" CommandParameter="HandleSettingsClick" Content="{Binding B3}"></Button>
+            <Label HorizontalAlignment="Center" Content="{Binding Label_Text2}"></Label>
+            <ListBox ItemsSource="{Binding Projects}" SelectedItem="{Binding SelectedProject}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding Path=Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using CMK.Services;
+using CMK_WebSiteDeveloperStudio.BusinessLogicLayer;
 using CMK_WebSiteDeveloperStudio.Configs;
 using CMK_WebSiteDeveloperStudio.Services;
 using CMK_WebSiteDeveloperStudio.ViewModels;
@@ -26,8 +27,6 @@ namespace CMK_WebSiteDeveloperStudio
             const string CONFIG_FILE_NAME = "config.xml";
             const string DEFAULT_CONFIG = "<Config><Language>DE</Language><ProjectPath>E:\\CMK WSDS Projects\\</ProjectPath></Config>";
 
-
-
             try
             {
                 var tempPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + CONFIG_PATH_NAME;
@@ -48,8 +47,10 @@ namespace CMK_WebSiteDeveloperStudio
                 }
                 var translationService = new TranslationService();
                 translationService.Initialize(config.Language);
+                var projectLoader = new ProjectLoader(config);
+                var core = new Core(projectLoader, translationService);
 
-                var startWindow_vm = new StartWindow_ViewModel(translationService);
+                var startWindow_vm = new StartWindow_ViewModel(core);
                 var mainWindow = new StartWindow(startWindow_vm);
                 mainWindow.Show();
                 throw new Exception("test");

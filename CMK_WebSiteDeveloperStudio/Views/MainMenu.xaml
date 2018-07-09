@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMK_WebSiteDeveloperStudio.Views"
         mc:Ignorable="d"
-        Title="MainMenu" Height="300" Width="300">
+        Title="MainMenu" Height="80" Width="600">
     <Grid>
         
     </Grid>
