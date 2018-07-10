@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMK_WebSiteDeveloperStudio.Configs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,6 @@ namespace CMK_WebSiteDeveloperStudio.DTOs
     public class Project
     {
         public string Name { get; set; }
-        
+        public ProjectConfig Config { get; set; }
     }
 }

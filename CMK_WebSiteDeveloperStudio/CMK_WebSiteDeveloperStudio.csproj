@@ -66,10 +66,12 @@
     <Compile Include="DTOs\Language.cs" />
     <Compile Include="DTOs\Languages.cs" />
     <Compile Include="DTOs\Project.cs" />
+    <Compile Include="DTOs\ProjectFile.cs" />
     <Compile Include="Enums\WindowEnum.cs" />
     <Compile Include="Services\ProjectLoader.cs" />
+    <Compile Include="Services\ProjectManager.cs" />
     <Compile Include="Services\TranslationService.cs" />
-    <Compile Include="Services\WindowManager.cs" />
+    <Compile Include="Factories\WindowFactory.cs" />
     <Compile Include="ViewModels\ProjectViewer_ViewModel.cs" />
     <Compile Include="ViewModels\StartWindow_ViewModel.cs" />
     <Compile Include="Views\Attributes.xaml.cs">

@@ -1,6 +1,7 @@
 ﻿using CMK_WebSiteDeveloperStudio.Configs;
 using CMK_WebSiteDeveloperStudio.DTOs;
 using CMK_WebSiteDeveloperStudio.Enums;
+using CMK_WebSiteDeveloperStudio.Factories;
 using CMK_WebSiteDeveloperStudio.Services;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
     {
         private ProjectLoader projectLoader;
         private TranslationService translationService;
-        private WindowManager windowManager;
+        private WindowFactory windowFactory;
         public Config Config { get; }
 
         public Core(
@@ -31,7 +32,7 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
             this.Config = config;
             this.projectLoader = projectLoader;
             this.translationService = translationService;
-            windowManager = new WindowManager(this);
+            windowFactory = new WindowFactory(this);
         }
 
         public List<Project> GetProjects()
@@ -46,7 +47,7 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
 
         public void CreateWindow(WindowEnum winEnum)
         {
-            windowManager.CreateWindow(winEnum);
+            windowFactory.CreateWindow(winEnum).Show();
         }
     }
 }
