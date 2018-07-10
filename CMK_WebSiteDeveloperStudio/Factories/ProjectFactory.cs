@@ -24,7 +24,7 @@ namespace CMK_WebSiteDeveloperStudio.Factories
         {
             var project = new Project
             {
-                Name = $"{core.Config.ProjectPath}/{name}/",
+                Name = $"{core.Config.ProjectPath}{name}\\",
                 Config = new ProjectConfig
                 {
                     ProjectType = 1,
@@ -35,7 +35,7 @@ namespace CMK_WebSiteDeveloperStudio.Factories
             XmlSerializer serializer = new XmlSerializer(typeof(ProjectConfig));
             using (var s = new FileStream(project.Name + "Project.xml", FileMode.Create))
                 using (var sw = new StreamWriter(s))
-                    serializer.Serialize(sw, project);
+                    serializer.Serialize(sw, project.Config);
             return project;
         }
     }

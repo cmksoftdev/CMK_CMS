@@ -23,14 +23,13 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         public Core(
             Config config,
             ProjectLoader projectLoader,
-            TranslationService translationService,
-            ProjectFactory projectFactory
+            TranslationService translationService
             )
         {
             Config = config;
             this.projectLoader = projectLoader ?? throw new NullReferenceException(projectLoader.GetType() + " was null.");
             this.translationService = translationService ?? throw new NullReferenceException(translationService.GetType() + " was null.");
-            this.projectFactory = projectFactory ?? throw new NullReferenceException(projectFactory.GetType() + " was null.");
+            projectFactory = new ProjectFactory(this);
             windowFactory = new WindowFactory(this);
         }
 
@@ -47,6 +46,11 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         public void CreateWindow(WindowEnum winEnum)
         {
             windowFactory.CreateWindow(winEnum).Show();
+        }
+
+        public void CreateProject(string name)
+        {
+            projectFactory.Create(name);
         }
     }
 }

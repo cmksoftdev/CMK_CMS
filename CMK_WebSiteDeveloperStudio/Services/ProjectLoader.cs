@@ -33,8 +33,9 @@ namespace CMK_WebSiteDeveloperStudio.Services
             XmlSerializer serializer = new XmlSerializer(typeof(ProjectConfig));
             foreach (var folder in folders)
             {
-                if (File.Exists(path + "Project.xml"))
-                    using (var stream = File.Open(path + "Project.xml", FileMode.Open))
+                var configFilePath = folder + "\\Project.xml";
+                if (File.Exists(configFilePath))
+                    using (var stream = File.Open(configFilePath, FileMode.Open))
                     {
                         projects.Add(new Project
                         {

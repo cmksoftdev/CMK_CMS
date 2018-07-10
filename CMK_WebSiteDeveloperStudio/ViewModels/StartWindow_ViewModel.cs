@@ -50,7 +50,7 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
 
         public void HandleNewClick()
         {
-            MessageBox.Show("Test2");
+            core.CreateProject("Test");
         }
 
         public void HandleSettingsClick()
