@@ -16,22 +16,21 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         private ProjectLoader projectLoader;
         private TranslationService translationService;
         private WindowFactory windowFactory;
+        private ProjectFactory projectFactory;
+
         public Config Config { get; }
 
         public Core(
             Config config,
             ProjectLoader projectLoader,
-            TranslationService translationService
+            TranslationService translationService,
+            ProjectFactory projectFactory
             )
         {
-            if (projectLoader == null)
-                throw new NullReferenceException(projectLoader.GetType() + " was null.");
-            if (translationService == null)
-                throw new NullReferenceException(translationService.GetType() + " was null.");
-
-            this.Config = config;
-            this.projectLoader = projectLoader;
-            this.translationService = translationService;
+            Config = config;
+            this.projectLoader = projectLoader ?? throw new NullReferenceException(projectLoader.GetType() + " was null.");
+            this.translationService = translationService ?? throw new NullReferenceException(translationService.GetType() + " was null.");
+            this.projectFactory = projectFactory ?? throw new NullReferenceException(projectFactory.GetType() + " was null.");
             windowFactory = new WindowFactory(this);
         }
 

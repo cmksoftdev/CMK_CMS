@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CMK_WebSiteDeveloperStudio.Services
 {
@@ -29,12 +30,18 @@ namespace CMK_WebSiteDeveloperStudio.Services
         {
             projects = new List<Project>();
             var folders = Directory.GetDirectories(path);
+            XmlSerializer serializer = new XmlSerializer(typeof(ProjectConfig));
             foreach (var folder in folders)
             {
-                projects.Add(new Project
-                {
-                    Name = folder
-                });
+                if (File.Exists(path + "Project.xml"))
+                    using (var stream = File.Open(path + "Project.xml", FileMode.Open))
+                    {
+                        projects.Add(new Project
+                        {
+                            Name = folder,
+                            Config = serializer.Deserialize(stream) as ProjectConfig
+                        });
+                    }
             }
         }
     }

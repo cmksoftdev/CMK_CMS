@@ -17,5 +17,10 @@ namespace CMK_WebSiteDeveloperStudio.Services
         {
             this.core = core;
         }
+
+        public void Set(Project project)
+        {
+
+        }
     }
 }
