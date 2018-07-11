@@ -27,8 +27,6 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
             set;
         }
 
-        public CommandMethodReflectionProvider com { get; }
-
         private Core core;
 
         public StartWindow_ViewModel(Core core)

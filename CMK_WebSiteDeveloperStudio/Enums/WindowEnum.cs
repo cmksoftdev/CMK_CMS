@@ -9,6 +9,7 @@ namespace CMK_WebSiteDeveloperStudio.Enums
     public enum WindowEnum
     {
         StartWindow,
-        ProjectView
+        ProjectView,
+        NewFile
     }
 }

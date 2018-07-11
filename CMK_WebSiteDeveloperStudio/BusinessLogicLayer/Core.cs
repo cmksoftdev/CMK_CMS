@@ -49,6 +49,11 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
             windowFactory.CreateWindow(winEnum).Show();
         }
 
+        public void CreateWindowDialog(WindowEnum winEnum)
+        {
+            windowFactory.CreateWindow(winEnum).ShowDialog();
+        }
+
         public void CreateProject(string name)
         {
             projectFactory.Create(name);

@@ -73,6 +73,7 @@
     <Compile Include="Services\ProjectManager.cs" />
     <Compile Include="Services\TranslationService.cs" />
     <Compile Include="Factories\WindowFactory.cs" />
+    <Compile Include="ViewModels\NewFile_ViewModel.cs" />
     <Compile Include="ViewModels\ProjectViewer_ViewModel.cs" />
     <Compile Include="ViewModels\StartWindow_ViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />

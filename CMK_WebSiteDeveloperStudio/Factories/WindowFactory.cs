@@ -43,6 +43,14 @@ namespace CMK_WebSiteDeveloperStudio.Factories
                         viewModels.Add(vm);
                     }
                     return new ProjectViewer(vm as ProjectViewer_ViewModel);
+                case WindowEnum.NewFile:
+                    vm = viewModels.FirstOrDefault<object>(x => x.GetType() == typeof(NewFile_ViewModel));
+                    if (vm == null)
+                    {
+                        vm = new NewFile_ViewModel(core);
+                        viewModels.Add(vm);
+                    }
+                    return new NewFile(vm as NewFile_ViewModel);
                 default:
                     return null;
             }            

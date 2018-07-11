@@ -1,6 +1,7 @@
 ﻿using CMK.Services;
 using CMK_WebSiteDeveloperStudio.BusinessLogicLayer;
 using CMK_WebSiteDeveloperStudio.DTOs;
+using CMK_WebSiteDeveloperStudio.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CMK_WebSiteDeveloperStudio.ViewModels
 {
-    public class ProjectViewer_ViewModel : INotifyPropertyChanged
+    public class ProjectViewer_ViewModel : ViewModelBase
     {
         float columnWidth;
         public float ColumWidth
@@ -35,9 +36,9 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
             set
             {
                 columnWidthThird = value;
-                NotifyPropertyChanged(nameof(ColumWidthThird));
-                NotifyPropertyChanged(nameof(ColumWidthTwoThird));
-                NotifyPropertyChanged(nameof(ColumWidthSixth));
+                OnPropertyChanged(nameof(ColumWidthThird));
+                OnPropertyChanged(nameof(ColumWidthTwoThird));
+                OnPropertyChanged(nameof(ColumWidthSixth));
             }
         }
 
@@ -70,7 +71,6 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
                 return core.SelectedProject.Config.ProjectFiles;
             }
         }
-        public CommandMethodReflectionProvider com { get; }
 
         public string Title => $"{core.GetTranslation(8)}: {core.SelectedProject.Name}";
         public string B1 => core.GetTranslation(9);
@@ -93,18 +93,9 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
             ColumWidthThird = ColumWidth / 3f - 2f;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-            }
-        }
-
         public void HandleNewFileClick()
         {
-
+            core.CreateWindowDialog(WindowEnum.NewFile);
         }
     }
 }

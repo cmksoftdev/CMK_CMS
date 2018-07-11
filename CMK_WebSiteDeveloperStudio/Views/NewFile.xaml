@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="NewFile" Height="300" Width="300">
     <Grid>
-        
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBox></TextBox>
+                <Button></Button>
+            </StackPanel>        
+        </StackPanel>
     </Grid>
 </Window>
