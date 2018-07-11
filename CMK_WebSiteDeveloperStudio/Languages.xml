@@ -12,6 +12,16 @@
       <TL>Projekte</TL>
       <TL>Name</TL>
       <TL>Pfad</TL>
+      <TL>Projekt</TL>
+      <TL>Neue Datei anlegen</TL>
+      <TL>Datei löschen</TL>
+      <TL>Datei öffnen</TL>
+      <TL>Projekt schließen</TL>
+      <TL>Projekt löschen</TL>
+      <TL>Projekteigenschaften öffnen</TL>
+      <TL>Dateiname</TL>
+      <TL>Dateityp</TL>
+      <TL>Letzte Änderung</TL>
     </Translations>
   </Language>
   <Language>
@@ -25,6 +35,16 @@
       <TL>Projects</TL>
       <TL>Name</TL>
       <TL>Path</TL>
+      <TL>Project</TL>
+      <TL>New file</TL>
+      <TL>Delete file</TL>
+      <TL>Open file</TL>
+      <TL>Close project</TL>
+      <TL>Delete project</TL>
+      <TL>Open project properties</TL>
+      <TL>Filename</TL>
+      <TL>Filetype</TL>
+      <TL>Last modified</TL>
     </Translations>
   </Language>
    <Language>
@@ -38,6 +58,16 @@
        <TL>Добро пожаловать!</TL>
        <TL>Name</TL>
        <TL>Path</TL>
+       <TL>Project</TL>
+       <TL>New file</TL>
+       <TL>Delete file</TL>
+       <TL>Open file</TL>
+       <TL>Close project</TL>
+       <TL>Delete project</TL>
+       <TL>Open project properties</TL>
+       <TL>Filename</TL>
+       <TL>Filetype</TL>
+       <TL>Last modified</TL>
      </Translations>
    </Language>
  </L>

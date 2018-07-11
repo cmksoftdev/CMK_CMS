@@ -20,7 +20,7 @@ namespace CMK_WebSiteDeveloperStudio.Services
 
         public void Set(Project project)
         {
-
+            this.project = project;
         }
     }
 }

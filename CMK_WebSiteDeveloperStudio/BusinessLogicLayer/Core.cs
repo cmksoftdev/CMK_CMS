@@ -19,6 +19,7 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         private ProjectFactory projectFactory;
 
         public Config Config { get; }
+        public Project SelectedProject { get; set; }
 
         public Core(
             Config config,

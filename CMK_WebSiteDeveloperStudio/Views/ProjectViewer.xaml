@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMK_WebSiteDeveloperStudio.Views"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="300" Width="300">
+        Title="{Binding Title}" Height="300" Width="{Binding ColumWidth, Mode=TwoWay}">
     <Grid>
-        
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B4}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+                <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B5}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+                <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B6}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B1}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+                <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B2}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+                <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B3}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{Binding L1}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthTwoThird}"></Label>
+                <Label Content="{Binding L2}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"></Label>
+                <Label Content="{Binding L3}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"></Label>
+            </StackPanel>
+            <ListBox ItemsSource="{Binding ProjectFiles}" SelectedItem="{Binding SelectedProjectFile}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthTwoThird}"/>
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"/>
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="{Binding Path=FilePath}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthTwoThird}" HorizontalAlignment="Stretch"/>
+                            <Label Grid.Column="1" Content="{Binding Path=FileType}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}" HorizontalAlignment="Stretch"/>
+                            <Label Grid.Column="2" Content="{Binding Path=LastModified}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}" HorizontalAlignment="Stretch"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
     </Grid>
 </Window>

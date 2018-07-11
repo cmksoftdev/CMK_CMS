@@ -12,7 +12,7 @@ using System.Windows;
 
 namespace CMK_WebSiteDeveloperStudio.ViewModels
 {
-    public class StartWindow_ViewModel
+    public class StartWindow_ViewModel : ViewModelBase
     {
         public string B1 { get; private set; }
         public string B2 { get; private set; }
@@ -45,6 +45,7 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
 
         public void HandleLoadClick()
         {
+            core.SelectedProject = SelectedProject;
             core.CreateWindow(WindowEnum.ProjectView);
         }
 
