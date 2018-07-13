@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMK_WebSiteDeveloperStudio.Views"
         mc:Ignorable="d"
-        Title="NewFile" Height="300" Width="300">
+        Title="NewFile" Height="300" Width="{Binding ColumWidth, Mode=OneWayToSource}">
     <Grid>
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
-                <TextBox></TextBox>
-                <Button></Button>
+                <TextBox Width="{Binding ColumWidthHalf}"></TextBox>
+                <Button Width="{Binding ColumWidthHalf}"></Button>
             </StackPanel>        
         </StackPanel>
     </Grid>

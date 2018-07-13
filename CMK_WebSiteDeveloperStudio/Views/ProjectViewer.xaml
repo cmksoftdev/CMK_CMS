@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMK_WebSiteDeveloperStudio.Views"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="300" Width="{Binding ColumWidth, Mode=TwoWay}">
+        Title="{Binding Title}" Height="300" Width="{Binding ColumWidth, Mode=TwoWay}" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
