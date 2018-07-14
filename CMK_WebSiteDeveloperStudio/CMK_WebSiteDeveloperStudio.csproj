@@ -69,6 +69,7 @@
     <Compile Include="DTOs\ProjectFile.cs" />
     <Compile Include="Enums\WindowEnum.cs" />
     <Compile Include="Factories\ProjectFactory.cs" />
+    <Compile Include="Services\FileManager.cs" />
     <Compile Include="Services\ProjectLoader.cs" />
     <Compile Include="Services\ProjectManager.cs" />
     <Compile Include="Services\TranslationService.cs" />

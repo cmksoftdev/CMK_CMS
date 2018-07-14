@@ -58,5 +58,10 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         {
             projectFactory.Create(name);
         }
+
+        public void CreateFile(string name)
+        {
+            SelectedProject.Config.ProjectFiles.Add(new ProjectFile { FilePath = SelectedProject.Name + name });
+        }
     }
 }
