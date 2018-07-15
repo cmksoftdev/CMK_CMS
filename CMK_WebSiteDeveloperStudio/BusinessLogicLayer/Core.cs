@@ -19,6 +19,7 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         private ProjectFactory projectFactory;
         private FileManager fileManager;
         private ProjectManager projectManager;
+        private TemplateFunnel templateFunnel;
 
         public Config Config { get; }
 
@@ -40,12 +41,14 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         public Core(
             Config config,
             ProjectLoader projectLoader,
-            TranslationService translationService
+            TranslationService translationService,
+            TemplateFunnel templateFunnel
             )
         {
             Config = config;
             this.projectLoader = projectLoader ?? throw new NullReferenceException(projectLoader.GetType() + " was null.");
             this.translationService = translationService ?? throw new NullReferenceException(translationService.GetType() + " was null.");
+            this.templateFunnel = templateFunnel ?? throw new NullReferenceException(templateFunnel.GetType() + " was null.");
             projectFactory = new ProjectFactory(this);
             projectManager = new ProjectManager(this);
             windowFactory = new WindowFactory(this);

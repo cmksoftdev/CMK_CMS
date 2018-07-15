@@ -49,12 +49,12 @@ namespace CMK_WebSiteDeveloperStudio
                 var translationService = new TranslationService();
                 translationService.Initialize(config.Language);
                 var projectLoader = new ProjectLoader(config);
-                var core = new Core(config, projectLoader, translationService);
+                var templateFunnel = new TemplateFunnel();
+                var core = new Core(config, projectLoader, translationService, templateFunnel);
 
                 var startWindow_vm = new StartWindow_ViewModel(core);
                 var mainWindow = new StartWindow(startWindow_vm);
                 mainWindow.Show();
-                throw new Exception("test");
             }
             catch (Exception ex)
             {

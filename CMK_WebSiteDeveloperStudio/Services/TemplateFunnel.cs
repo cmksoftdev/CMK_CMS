@@ -1,4 +1,5 @@
-﻿using CMK_WebSiteDeveloperStudio.DTOs;
+﻿using CMK_WebSiteDeveloperStudio.Configs;
+using CMK_WebSiteDeveloperStudio.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,21 @@ namespace CMK_WebSiteDeveloperStudio.Services
 {
     public class TemplateFunnel
     {
-        Templates templates;
+        TemplateConfig templates;
 
         public TemplateFunnel()
         {
-            templates = XmlLoader.Load<Templates>("Templates.xml");
+            templates = XmlLoader.Load<TemplateConfig>("Templates.xml");
+        }
+
+        public List<Template> GetFileTemplates()
+        {
+            return templates.Templates.FindAll(x => x.FileTemplate == "1");
+        }
+
+        public List<Template> GetCodeTemplates()
+        {
+            return templates.Templates.FindAll(x => x.FileTemplate == "2");
         }
     }
 }

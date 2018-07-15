@@ -69,7 +69,7 @@
     <Compile Include="DTOs\Project.cs" />
     <Compile Include="DTOs\ProjectFile.cs" />
     <Compile Include="DTOs\Template.cs" />
-    <Compile Include="DTOs\Templates.cs" />
+    <Compile Include="Configs\TemplateConfig.cs" />
     <Compile Include="Enums\WindowEnum.cs" />
     <Compile Include="Factories\ProjectFactory.cs" />
     <Compile Include="Services\FileManager.cs" />
@@ -141,7 +141,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Templates.xml" />
+    <None Include="Templates.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\Attributes.xaml">
