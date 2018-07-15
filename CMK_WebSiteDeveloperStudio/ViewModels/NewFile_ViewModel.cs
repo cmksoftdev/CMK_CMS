@@ -68,6 +68,10 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
 
         public void HandleNewFileClick()
         {
+            if (!String.IsNullOrEmpty(Filename))
+            {
+                core.CreateFile(Filename);                
+            }
         }
     }
 }

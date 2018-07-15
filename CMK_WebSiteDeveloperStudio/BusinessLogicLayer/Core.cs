@@ -17,9 +17,25 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         private TranslationService translationService;
         private WindowFactory windowFactory;
         private ProjectFactory projectFactory;
+        private FileManager fileManager;
+        private ProjectManager projectManager;
 
         public Config Config { get; }
-        public Project SelectedProject { get; set; }
+
+        Project selectedProject;
+        public Project SelectedProject
+        {
+            get
+            {
+                return selectedProject;
+            }
+            set
+            {
+                this.fileManager = new FileManager(value.Config.ProjectFiles);
+                projectManager.Set(value);
+                selectedProject = value;
+            }
+        }
 
         public Core(
             Config config,
@@ -31,6 +47,7 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
             this.projectLoader = projectLoader ?? throw new NullReferenceException(projectLoader.GetType() + " was null.");
             this.translationService = translationService ?? throw new NullReferenceException(translationService.GetType() + " was null.");
             projectFactory = new ProjectFactory(this);
+            projectManager = new ProjectManager(this);
             windowFactory = new WindowFactory(this);
         }
 
@@ -49,9 +66,9 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
             windowFactory.CreateWindow(winEnum).Show();
         }
 
-        public void CreateWindowDialog(WindowEnum winEnum)
+        public bool? CreateWindowDialog(WindowEnum winEnum)
         {
-            windowFactory.CreateWindow(winEnum).ShowDialog();
+            return windowFactory.CreateWindow(winEnum).ShowDialog();
         }
 
         public void CreateProject(string name)
@@ -61,7 +78,23 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
 
         public void CreateFile(string name)
         {
-            SelectedProject.Config.ProjectFiles.Add(new ProjectFile { FilePath = SelectedProject.Name + name });
+            if (selectedProject != null)
+            {
+                var file = new ProjectFile { FilePath = SelectedProject.Name + "\\" + name };
+                fileManager.Add(file);
+                SelectedProject.Config.ProjectFiles.Add(file);
+                projectManager.Save();
+            }
+        }
+
+        public void DeleteFile(ProjectFile file)
+        {
+            if (file != null)
+            {
+                fileManager.Remove(file);
+                SelectedProject.Config.ProjectFiles.Remove(file);
+                projectManager.Save();
+            }
         }
     }
 }

@@ -15,7 +15,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button Command="{Binding com.Command}" CommandParameter="HandleNewFileClick" Content="{Binding B1}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
-                <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B2}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+                <Button Command="{Binding com.Command}" CommandParameter="HandleDeleteFileClick" Content="{Binding B2}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
                 <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B3}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
@@ -23,7 +23,7 @@
                 <Label Content="{Binding L2}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"></Label>
                 <Label Content="{Binding L3}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"></Label>
             </StackPanel>
-            <ListBox ItemsSource="{Binding ProjectFiles}" SelectedItem="{Binding SelectedProjectFile}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <ListBox ItemsSource="{Binding Path=ProjectFiles, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedProjectFile}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

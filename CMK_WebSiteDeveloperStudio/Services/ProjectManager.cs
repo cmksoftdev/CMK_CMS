@@ -1,10 +1,13 @@
 ﻿using CMK_WebSiteDeveloperStudio.BusinessLogicLayer;
+using CMK_WebSiteDeveloperStudio.Configs;
 using CMK_WebSiteDeveloperStudio.DTOs;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CMK_WebSiteDeveloperStudio.Services
 {
@@ -21,6 +24,20 @@ namespace CMK_WebSiteDeveloperStudio.Services
         public void Set(Project project)
         {
             this.project = project;
+        }
+
+        public void Save()
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(ProjectConfig));
+            var configFilePath = project.Name + "\\Project.xml";
+            if (File.Exists(configFilePath))
+                using (var stream = File.Open(configFilePath, FileMode.Create))
+                {
+                    using (var writer = new StreamWriter(stream))
+                    {
+                        serializer.Serialize(writer, project.Config);
+                    }
+                }
         }
     }
 }

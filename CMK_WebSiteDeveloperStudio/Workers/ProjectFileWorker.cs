@@ -40,7 +40,9 @@ namespace CMK_WebSiteDeveloperStudio.Workers
             {
                 using (var reader = new StreamReader(fileStream))
                 {
-                    return reader.ReadToEnd();
+                    var re = reader.ReadToEnd();
+                    fileStream.Close();
+                    return re;
                 }
             }
         }
@@ -51,8 +53,10 @@ namespace CMK_WebSiteDeveloperStudio.Workers
             {
                 using (var writer = new StreamWriter(fileStream))
                 {
-                    writer.Write(Content);
+                    writer.Write(content);
+                    UnsaveChanges = false;
                 }
+                fileStream.Close();
             }
         }
 

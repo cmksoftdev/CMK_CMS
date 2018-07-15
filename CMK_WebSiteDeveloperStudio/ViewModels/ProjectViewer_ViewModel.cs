@@ -4,6 +4,7 @@ using CMK_WebSiteDeveloperStudio.DTOs;
 using CMK_WebSiteDeveloperStudio.Enums;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -64,11 +65,16 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
             set;
         }
 
-        public List<ProjectFile> ProjectFiles
+        public ObservableCollection<ProjectFile> ProjectFiles
         {
             get
             {
-                return core.SelectedProject.Config.ProjectFiles;
+                ObservableCollection<ProjectFile> collection = new ObservableCollection<ProjectFile>();
+                foreach(var file in core.SelectedProject.Config.ProjectFiles)
+                {
+                    collection.Add(file);
+                }
+                return collection;
             }
         }
 
@@ -95,7 +101,20 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
 
         public void HandleNewFileClick()
         {
-            core.CreateWindowDialog(WindowEnum.NewFile);
+            if (core.CreateWindowDialog(WindowEnum.NewFile) != null)
+            {
+                OnPropertyChanged(nameof(ProjectFiles));
+            }
+        }
+
+        public void HandleDeleteFileClick()
+        {
+            if (SelectedProjectFile != null)
+            {
+                core.DeleteFile(SelectedProjectFile);
+                SelectedProjectFile = null;
+                OnPropertyChanged(nameof(ProjectFiles));
+            }
         }
     }
 }

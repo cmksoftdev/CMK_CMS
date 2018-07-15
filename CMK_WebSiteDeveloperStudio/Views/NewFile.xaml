@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMK_WebSiteDeveloperStudio.Views"
         mc:Ignorable="d"
-        Title="NewFile" Height="300" Width="{Binding ColumWidth, Mode=OneWayToSource}">
+        Title="NewFile" Height="300" Width="{Binding ColumWidth, Mode=OneWayToSource, FallbackValue=200}" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
-                <TextBox Width="{Binding ColumWidthHalf}"></TextBox>
-                <Button Width="{Binding ColumWidthHalf}"></Button>
+                <TextBox Width="{Binding ColumWidthHalf}" Text="{Binding Filename}"></TextBox>
+                <Button Width="{Binding ColumWidthHalf}" Command="{Binding com.Command}" CommandParameter="HandleNewFileClick" ></Button>
             </StackPanel>        
         </StackPanel>
     </Grid>
