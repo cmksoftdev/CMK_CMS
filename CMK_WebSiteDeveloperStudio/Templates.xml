@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Templates>
+  <Template>
+    <Image></Image>
+    <Name>Empty Text File</Name>
+    <FilePath></FilePath>
+    <FileExtension>.txt</FileExtension>
+    <PlaceHolders>
+    </PlaceHolders>
+  </Template>
+  <Template>
+    <Name>HTML 5 Index Site</Name>
+    <FilePath>Templates\\html5index.tpt</FilePath>
+    <FileExtension>.html</FileExtension>
+    <PlaceHolders>
+      <PlaceHolder>
+        <Name>Language</Name>
+        <Symbol>!language</Symbol>
+      </PlaceHolder>
+      <PlaceHolder>
+        <Name>Title</Name>
+        <Symbol>!title</Symbol>
+      </PlaceHolder>
+      <PlaceHolder>
+        <Name>Content</Name>
+        <Symbol>!content</Symbol>
+      </PlaceHolder>
+    </PlaceHolders>
+  </Template>
+  <Template>
+    <Name>Empty PHP Script</Name>
+    <FilePath>Templates\\phpscript.tpt</FilePath>
+    <FileExtension>.php</FileExtension>
+    <PlaceHolders>
+      <PlaceHolder>
+        <Name>Code</Name>
+        <Symbol>!code</Symbol>
+      </PlaceHolder>
+    </PlaceHolders>
+  </Template>
+</Templates>
