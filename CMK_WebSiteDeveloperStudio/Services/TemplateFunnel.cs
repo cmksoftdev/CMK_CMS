@@ -9,6 +9,11 @@ namespace CMK_WebSiteDeveloperStudio.Services
 {
     public class TemplateFunnel
     {
-        List<Template> templates;
+        Templates templates;
+
+        public TemplateFunnel()
+        {
+            templates = XmlLoader.Load<Templates>("Templates.xml");
+        }
     }
 }

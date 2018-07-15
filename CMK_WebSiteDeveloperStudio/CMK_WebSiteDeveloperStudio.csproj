@@ -69,6 +69,7 @@
     <Compile Include="DTOs\Project.cs" />
     <Compile Include="DTOs\ProjectFile.cs" />
     <Compile Include="DTOs\Template.cs" />
+    <Compile Include="DTOs\Templates.cs" />
     <Compile Include="Enums\WindowEnum.cs" />
     <Compile Include="Factories\ProjectFactory.cs" />
     <Compile Include="Services\FileManager.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Services\TemplateFunnel.cs" />
     <Compile Include="Services\TranslationService.cs" />
     <Compile Include="Factories\WindowFactory.cs" />
+    <Compile Include="Services\XmlLoader.cs" />
     <Compile Include="ViewModels\NewFile_ViewModel.cs" />
     <Compile Include="ViewModels\ProjectViewer_ViewModel.cs" />
     <Compile Include="ViewModels\StartWindow_ViewModel.cs" />

@@ -28,11 +28,7 @@ namespace CMK_WebSiteDeveloperStudio.Services
 
         public void Initialize(string language)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(Languages));
-            using (var stream = File.Open(CONFIG_NAME, FileMode.Open))
-            {
-                languages = serializer.Deserialize(stream) as Languages;
-            }
+            languages = XmlLoader.Load<Languages>(CONFIG_NAME);
             localLanguage = language;
         }
 
