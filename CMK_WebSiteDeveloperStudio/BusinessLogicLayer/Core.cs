@@ -90,6 +90,20 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
             }
         }
 
+        public void CreateFileFromTemplate(string name, Template template)
+        {
+            if (selectedProject != null)
+            {
+                var file = new ProjectFile { FilePath = SelectedProject.Name + "\\" + name };
+                fileManager.Add(file);
+                var worker = fileManager.GetWorker(file);
+                worker.Content = templateFunnel.Fill(template);
+                worker.Save();
+                SelectedProject.Config.ProjectFiles.Add(file);
+                projectManager.Save();
+            }
+        }
+
         public void DeleteFile(ProjectFile file)
         {
             if (file != null)
@@ -98,6 +112,11 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
                 SelectedProject.Config.ProjectFiles.Remove(file);
                 projectManager.Save();
             }
+        }
+
+        public List<Template> GetFileTemplates()
+        {
+            return templateFunnel.GetFileTemplates();
         }
     }
 }

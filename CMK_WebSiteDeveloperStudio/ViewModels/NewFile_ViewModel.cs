@@ -1,8 +1,10 @@
 ﻿using CMK.Services;
 using CMK_WebSiteDeveloperStudio.BusinessLogicLayer;
+using CMK_WebSiteDeveloperStudio.DTOs;
 using CMK_WebSiteDeveloperStudio.Enums;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,6 +60,43 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
             }
         }
 
+        public List<Template> Templates
+        {
+            get
+            {
+                return core.GetFileTemplates();
+            }
+        }
+
+        public ObservableCollection<PlaceHolder> PlaceHolders
+        {
+            get
+            {
+                if(SelectedItem != null)
+                    return new ObservableCollection<PlaceHolder>(SelectedItem?.PlaceHolders);
+                else
+                    return new ObservableCollection<PlaceHolder>();
+            }
+            set
+            {
+                SelectedItem.PlaceHolders = value.ToList();
+            }
+        }
+
+        Template selectedItem;
+        public Template SelectedItem
+        {
+            get
+            {
+                return selectedItem;
+            }
+            set
+            {
+                selectedItem = value;
+                OnPropertyChanged(nameof(PlaceHolders));
+            }
+        }
+
         public string Filename { get; set; }
 
         public NewFile_ViewModel(Core core)
@@ -68,9 +107,9 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
 
         public void HandleNewFileClick()
         {
-            if (!String.IsNullOrEmpty(Filename))
+            if (!String.IsNullOrEmpty(Filename) && SelectedItem != null)
             {
-                core.CreateFile(Filename);                
+                core.CreateFileFromTemplate(Filename, SelectedItem);                
             }
         }
     }

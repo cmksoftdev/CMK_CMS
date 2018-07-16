@@ -8,6 +8,36 @@
         Title="NewFile" Height="300" Width="{Binding ColumWidth, Mode=OneWayToSource, FallbackValue=200}" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Orientation="Vertical">
+            <ListBox ItemsSource="{Binding Path=Templates, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthTwoThird}"/>
+                                    <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"/>
+                                    <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Content="{Binding Path=Name}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthTwoThird}" HorizontalAlignment="Stretch"/>
+                                <Label Grid.Column="1" Content="{Binding Path=FilePath}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}" HorizontalAlignment="Stretch"/>
+                                <Label Grid.Column="2" Content="{Binding Path=FileExtension}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}" HorizontalAlignment="Stretch"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            <ListBox ItemsSource="{Binding Path=PlaceHolders, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthHalf}"/>
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthHalf}"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="{Binding Path=Name}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthHalf}" HorizontalAlignment="Stretch"/>
+                            <TextBox Grid.Column="1" Text="{Binding Path=Content, Mode=OneWayToSource}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthHalf}"></TextBox>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
             <StackPanel Orientation="Horizontal">
                 <TextBox Width="{Binding ColumWidthHalf}" Text="{Binding Filename}"></TextBox>
                 <Button Width="{Binding ColumWidthHalf}" Command="{Binding com.Command}" CommandParameter="HandleNewFileClick" ></Button>

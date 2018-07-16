@@ -37,5 +37,15 @@ namespace CMK_WebSiteDeveloperStudio.Services
             files.Remove(file);
             File.Delete(file.FilePath);
         }
+
+        public ProjectFileWorker GetWorker(ProjectFile file)
+        {
+            return files[file];
+        }
+
+        public ProjectFileWorker GetWorker(string file)
+        {
+            return files.FirstOrDefault(x => x.Key.FilePath == file).Value;
+        }
     }
 }
