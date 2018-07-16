@@ -16,7 +16,7 @@
       <FileTemplate>1</FileTemplate>
       <Image></Image>
       <Name>HTML 5 Index Site</Name>
-      <FilePath>Templates\\html5index.tpt</FilePath>
+      <FilePath>Templates\html5index.tpt</FilePath>
       <FileExtension>.html</FileExtension>
       <PlaceHolders>
         <PlaceHolder>
@@ -38,7 +38,7 @@
       <FileTemplate>1</FileTemplate>
       <Image></Image>
       <Name>Empty PHP Script</Name>
-      <FilePath>Templates\\phpscript.tpt</FilePath>
+      <FilePath>Templates\phpscript.tpt</FilePath>
       <FileExtension>.php</FileExtension>
       <PlaceHolders>
         <PlaceHolder>

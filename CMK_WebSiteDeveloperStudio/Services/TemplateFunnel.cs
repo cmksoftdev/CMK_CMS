@@ -33,11 +33,18 @@ namespace CMK_WebSiteDeveloperStudio.Services
             using (var reader = File.OpenText(template.FilePath))
             {
                 var content = reader.ReadToEnd();
+                string oldString = "";
+                string newString = content;
                 foreach (var placeholder in template.PlaceHolders)
                 {
-                    content.Replace(placeholder.Symbol, placeholder.Content);
+                    do
+                    {
+                        oldString = newString;
+                        newString = oldString.Replace(placeholder.Symbol, placeholder.Content);
+                    }
+                    while (newString != oldString);
                 }
-                return content;
+                return newString;
             }
         }
     }
