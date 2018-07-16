@@ -10,6 +10,7 @@ namespace CMK_WebSiteDeveloperStudio.Enums
     {
         StartWindow,
         ProjectView,
-        NewFile
+        NewFile,
+        Editor
     }
 }

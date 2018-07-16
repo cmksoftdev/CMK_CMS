@@ -8,7 +8,7 @@
         Title="Editor" Height="300" Width="300">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <RichTextBox>
+            <RichTextBox Binding.SourceUpdated="RichTextBox_SourceUpdated" Binding.TargetUpdated="RichTextBox_SourceUpdated">
                 
             </RichTextBox>
         </StackPanel>

@@ -51,6 +51,14 @@ namespace CMK_WebSiteDeveloperStudio.Factories
                         viewModels.Add(vm);
                     }
                     return new NewFile(vm as NewFile_ViewModel);
+                case WindowEnum.Editor:
+                    vm = viewModels.FirstOrDefault<object>(x => x.GetType() == typeof(Editor_ViewModel));
+                    if (vm == null)
+                    {
+                        vm = new Editor_ViewModel(core);
+                        viewModels.Add(vm);
+                    }
+                    return new Editor(vm as Editor_ViewModel);
                 default:
                     return null;
             }            

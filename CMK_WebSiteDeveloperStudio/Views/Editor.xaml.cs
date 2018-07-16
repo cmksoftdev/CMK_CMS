@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMK_WebSiteDeveloperStudio.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,15 @@ namespace CMK_WebSiteDeveloperStudio.Views
     /// </summary>
     public partial class Editor : Window
     {
-        public Editor()
+        public Editor(Editor_ViewModel vm)
         {
+            DataContext = vm;
             InitializeComponent();
+        }
+
+        private void RichTextBox_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+
         }
     }
 }
