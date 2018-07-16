@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMK_WebSiteDeveloperStudio.Views"
         mc:Ignorable="d"
-        Title="NewFile" Height="300" Width="{Binding ColumWidth, Mode=OneWayToSource, FallbackValue=200}" WindowStartupLocation="CenterScreen">
+        Title="NewFile" Height="300" Width="{Binding ColumWidth, Mode=OneWayToSource, FallbackValue=500}" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Orientation="Vertical">
             <ListBox ItemsSource="{Binding Path=Templates, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
