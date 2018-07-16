@@ -18,7 +18,8 @@ namespace CMK_WebSiteDeveloperStudio.Services
             this.files = new Dictionary<ProjectFile, ProjectFileWorker>();
             foreach (var file in files)
             {
-                Add(file);
+                var worker = new ProjectFileWorker(file);
+                this.files.Add(file, worker);
             }
         }
 
