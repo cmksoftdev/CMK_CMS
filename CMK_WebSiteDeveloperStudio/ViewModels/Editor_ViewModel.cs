@@ -17,6 +17,7 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
         public Editor_ViewModel(Core core)
         {
             this.core = core;
+            this.com = new CommandMethodReflectionProvider(this);
         }
 
         ProjectFileWorker worker;
