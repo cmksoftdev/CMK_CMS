@@ -26,7 +26,7 @@ namespace CMK_WebSiteDeveloperStudio
         {
             const string CONFIG_PATH_NAME = "\\CMK WSDS Configs\\";
             const string CONFIG_FILE_NAME = "config.xml";
-            const string DEFAULT_CONFIG = "<Config><Language>DE</Language><ProjectPath>E:\\CMK WSDS Projects\\</ProjectPath></Config>";
+            const string DEFAULT_CONFIG = "<Config><Language>DE</Language><ProjectPath>C:\\CMK WSDS Projects\\</ProjectPath></Config>";
 
             try
             {
