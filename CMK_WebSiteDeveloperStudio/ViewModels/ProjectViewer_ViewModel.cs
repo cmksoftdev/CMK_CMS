@@ -107,6 +107,17 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
             }
         }
 
+        public void HandleOpenFileClick()
+        {
+            var window = core.ReturnFileWindow();
+            if (SelectedProjectFile != null)
+            {
+                ((Editor_ViewModel)window.DataContext).MyProperty = core.GetFileWorker(SelectedProjectFile);
+                ((Editor_ViewModel)window.DataContext).OnPropertyChanged("Text");
+                window.Show();
+            }
+        }
+
         public void HandleDeleteFileClick()
         {
             if (SelectedProjectFile != null)

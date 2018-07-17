@@ -3,6 +3,8 @@ using CMK_WebSiteDeveloperStudio.DTOs;
 using CMK_WebSiteDeveloperStudio.Enums;
 using CMK_WebSiteDeveloperStudio.Factories;
 using CMK_WebSiteDeveloperStudio.Services;
+using CMK_WebSiteDeveloperStudio.Views;
+using CMK_WebSiteDeveloperStudio.Workers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,6 +71,11 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
             windowFactory.CreateWindow(winEnum).Show();
         }
 
+        public Editor ReturnFileWindow()
+        {
+            return windowFactory.CreateWindow(WindowEnum.Editor) as Editor;
+        }
+
         public bool? CreateWindowDialog(WindowEnum winEnum)
         {
             return windowFactory.CreateWindow(winEnum).ShowDialog();
@@ -117,6 +124,11 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         public List<Template> GetFileTemplates()
         {
             return templateFunnel.GetFileTemplates();
+        }
+
+        public ProjectFileWorker GetFileWorker(ProjectFile file)
+        {
+            return fileManager.GetWorker(file);
         }
     }
 }

@@ -25,10 +25,5 @@ namespace CMK_WebSiteDeveloperStudio.Views
             DataContext = vm;
             InitializeComponent();
         }
-
-        private void RichTextBox_SourceUpdated(object sender, DataTransferEventArgs e)
-        {
-
-        }
     }
 }
