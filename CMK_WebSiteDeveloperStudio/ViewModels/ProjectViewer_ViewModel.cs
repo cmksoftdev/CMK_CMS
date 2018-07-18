@@ -110,7 +110,10 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
         public void HandleOpenFileClick()
         {
             var window = core.GetEditorForFile(SelectedProjectFile);
-            window?.Show();
+            if (!window.IsVisible)
+                window.Show();
+            else
+                window.Focus();
         }
 
         public void HandleDeleteFileClick()
