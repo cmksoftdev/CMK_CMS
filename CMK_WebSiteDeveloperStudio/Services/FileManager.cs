@@ -1,4 +1,7 @@
-﻿using CMK_WebSiteDeveloperStudio.DTOs;
+﻿using CMK_WebSiteDeveloperStudio.BusinessLogicLayer;
+using CMK_WebSiteDeveloperStudio.DTOs;
+using CMK_WebSiteDeveloperStudio.Factories;
+using CMK_WebSiteDeveloperStudio.Views;
 using CMK_WebSiteDeveloperStudio.Workers;
 using System;
 using System.Collections.Generic;
@@ -12,10 +15,14 @@ namespace CMK_WebSiteDeveloperStudio.Services
     public class FileManager
     {
         Dictionary<ProjectFile, ProjectFileWorker> files;
+        Dictionary<ProjectFile, Editor> editors;
+        Core core;
 
-        public FileManager(List<ProjectFile> files)
+        public FileManager(List<ProjectFile> files, Core core)
         {
+            this.core = core;
             this.files = new Dictionary<ProjectFile, ProjectFileWorker>();
+            this.editors = new Dictionary<ProjectFile, Editor>();
             foreach (var file in files)
             {
                 var worker = new ProjectFileWorker(file);
@@ -31,6 +38,18 @@ namespace CMK_WebSiteDeveloperStudio.Services
                 files.Add(file, worker);
                 worker.Create();
             }
+        }
+
+        public Editor GetEditorForFile(ProjectFile file)
+        {
+            if (!editors.Any(x => x.Key == file))
+            {
+                var worker = GetWorker(file);
+                var win = core.ReturnFileWindow(file);
+                editors.Add(file, win);
+                return win;
+            }
+            return editors.FirstOrDefault(x => x.Key == file).Value;
         }
 
         public void Remove(ProjectFile file)

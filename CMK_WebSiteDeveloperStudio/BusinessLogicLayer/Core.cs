@@ -3,6 +3,7 @@ using CMK_WebSiteDeveloperStudio.DTOs;
 using CMK_WebSiteDeveloperStudio.Enums;
 using CMK_WebSiteDeveloperStudio.Factories;
 using CMK_WebSiteDeveloperStudio.Services;
+using CMK_WebSiteDeveloperStudio.ViewModels;
 using CMK_WebSiteDeveloperStudio.Views;
 using CMK_WebSiteDeveloperStudio.Workers;
 using System;
@@ -34,7 +35,7 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
             }
             set
             {
-                this.fileManager = new FileManager(value.Config.ProjectFiles);
+                this.fileManager = new FileManager(value.Config.ProjectFiles, this);
                 projectManager.Set(value);
                 selectedProject = value;
             }
@@ -74,6 +75,18 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         public Editor ReturnFileWindow()
         {
             return windowFactory.CreateWindow(WindowEnum.Editor) as Editor;
+        }
+
+        public Editor ReturnFileWindow(ProjectFile file)
+        {
+            var win = new Editor(new Editor_ViewModel(this));
+            ((Editor_ViewModel)win.DataContext).MyProperty = GetFileWorker(file);
+            return win;
+        }
+
+        public Editor GetEditorForFile(ProjectFile file)
+        {
+            return fileManager.GetEditorForFile(file);
         }
 
         public bool? CreateWindowDialog(WindowEnum winEnum)
