@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
 {
@@ -77,16 +78,18 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
             return windowFactory.CreateWindow(WindowEnum.Editor) as Editor;
         }
 
-        public Editor ReturnFileWindow(ProjectFile file)
+        public AdvancedEditor ReturnFileWindow(ProjectFile file)
         {
-            var win = new Editor(new Editor_ViewModel(this));
-            ((Editor_ViewModel)win.DataContext).MyProperty = GetFileWorker(file);
+            Canvas canvas = null;
+            var win = new AdvancedEditor(new AdvancedEditor_ViewModel(this));
+            ((AdvancedEditor_ViewModel)win.DataContext).MyProperty = GetFileWorker(file);
             return win;
         }
 
-        public Editor GetEditorForFile(ProjectFile file)
+        public AdvancedEditor GetEditorForFile(ProjectFile file)
         {
-            return fileManager.GetEditorForFile(file);
+            var win = fileManager.GetEditorForFile(file);
+            return win; 
         }
 
         public bool? CreateWindowDialog(WindowEnum winEnum)
@@ -137,6 +140,11 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         public List<Template> GetFileTemplates()
         {
             return templateFunnel.GetFileTemplates();
+        }
+
+        public List<Template> GetCodeTemplates()
+        {
+            return templateFunnel.GetCodeTemplates();
         }
 
         public ProjectFileWorker GetFileWorker(ProjectFile file)

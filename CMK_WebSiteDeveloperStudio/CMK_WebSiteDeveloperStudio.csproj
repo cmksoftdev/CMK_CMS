@@ -74,19 +74,28 @@
     <Compile Include="Enums\WindowEnum.cs" />
     <Compile Include="Factories\ProjectFactory.cs" />
     <Compile Include="Services\FileManager.cs" />
+    <Compile Include="Services\KannWas.cs" />
     <Compile Include="Services\ProjectLoader.cs" />
     <Compile Include="Services\ProjectManager.cs" />
     <Compile Include="Services\TemplateFunnel.cs" />
     <Compile Include="Services\TranslationService.cs" />
     <Compile Include="Factories\WindowFactory.cs" />
     <Compile Include="Services\XmlLoader.cs" />
+    <Compile Include="ViewModels\AdvancedEditor_ViewModel.cs" />
+    <Compile Include="ViewModels\CodeTemplate_ViewModel.cs" />
     <Compile Include="ViewModels\Editor_ViewModel.cs" />
     <Compile Include="ViewModels\NewFile_ViewModel.cs" />
     <Compile Include="ViewModels\ProjectViewer_ViewModel.cs" />
     <Compile Include="ViewModels\StartWindow_ViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\AdvancedEditor.xaml.cs">
+      <DependentUpon>AdvancedEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Attributes.xaml.cs">
       <DependentUpon>Attributes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CodeTemplate.xaml.cs">
+      <DependentUpon>CodeTemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DesignViewer.xaml.cs">
       <DependentUpon>DesignViewer.xaml</DependentUpon>
@@ -139,6 +148,9 @@
     <None Include="Templates\html5index.tpt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Templates\ifelse.tpt" />
+    <None Include="Templates\inlinejs.tpt" />
+    <None Include="Templates\jsclass.tpt" />
     <None Include="Templates\phpscript.tpt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -152,7 +164,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\AdvancedEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Attributes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CodeTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

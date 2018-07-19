@@ -20,14 +20,14 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
             this.com = new CommandMethodReflectionProvider(this);
         }
 
-        ProjectFileWorker worker;
+        protected ProjectFileWorker worker;
 
         public string B1
         {
             get
             {
                 if (worker != null)
-                    return worker.UnsaveChanges ? "Save *" : "Save";
+                    return worker.UnsaveChanges ? "Save (modified)" : "Save";
                 return "...";
             }
         }

@@ -1,0 +1,47 @@
+﻿<Window x:Class="CMK_WebSiteDeveloperStudio.Views.CodeTemplate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CMK_WebSiteDeveloperStudio.Views"
+        mc:Ignorable="d"
+        Title="CodeTemplate"  Height="300" Width="{Binding ColumWidth, Mode=OneWayToSource, FallbackValue=500}" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <ListBox ItemsSource="{Binding Path=Templates, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthTwoThird}"/>
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"/>
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="{Binding Path=Name}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthTwoThird}" HorizontalAlignment="Stretch"/>
+                            <Label Grid.Column="1" Content="{Binding Path=FilePath}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}" HorizontalAlignment="Stretch"/>
+                            <Label Grid.Column="2" Content="{Binding Path=FileExtension}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}" HorizontalAlignment="Stretch"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox ItemsSource="{Binding Path=PlaceHolders, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthHalf}"/>
+                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthHalf}"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="{Binding Path=Name}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthHalf}" HorizontalAlignment="Stretch"/>
+                            <TextBox Grid.Column="1" Text="{Binding Path=Content, Mode=OneWayToSource}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthHalf}"></TextBox>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Width="{Binding ColumWidthHalf}" Text="{Binding Filename}"></TextBox>
+                <Button Width="{Binding ColumWidthHalf}" Command="{Binding com.Command}" CommandParameter="HandleNewFileClick" ></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

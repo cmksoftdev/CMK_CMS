@@ -15,14 +15,14 @@ namespace CMK_WebSiteDeveloperStudio.Services
     public class FileManager
     {
         Dictionary<ProjectFile, ProjectFileWorker> files;
-        Dictionary<ProjectFile, Editor> editors;
+        Dictionary<ProjectFile, AdvancedEditor> editors;
         Core core;
 
         public FileManager(List<ProjectFile> files, Core core)
         {
             this.core = core;
             this.files = new Dictionary<ProjectFile, ProjectFileWorker>();
-            this.editors = new Dictionary<ProjectFile, Editor>();
+            this.editors = new Dictionary<ProjectFile, AdvancedEditor>();
             foreach (var file in files)
             {
                 var worker = new ProjectFileWorker(file);
@@ -40,7 +40,7 @@ namespace CMK_WebSiteDeveloperStudio.Services
             }
         }
 
-        public Editor GetEditorForFile(ProjectFile file)
+        public AdvancedEditor GetEditorForFile(ProjectFile file)
         {
             if (!editors.Any(x => x.Key == file))
             {
