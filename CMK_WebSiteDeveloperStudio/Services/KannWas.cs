@@ -20,20 +20,27 @@ namespace CMK_WebSiteDeveloperStudio.Services
             int i = 0;
             var b = true;
             foreach (var row in rows)
-            {                
+            {
+                double j = 0;
                 rowLines.Add(new List<string>(row.Split(' ')));
-                b = !b;
-                var lab = new Label();
-                lab.Content = row;
-                if (b)
+                var words = row.Split(' ');
+                foreach (var word in words)
                 {
-                    var scb = new SolidColorBrush();
-                    scb.Color = Color.FromArgb(255, 0, 0, 255);
-                    lab.Foreground = new SolidColorBrush();
-                    lab.Foreground = scb;
+                    b = !b;
+                    var lab = new Label();
+                    lab.Content = word;
+                    if (b)
+                    {
+                        var scb = new SolidColorBrush();
+                        scb.Color = Color.FromArgb(255, 0, 0, 255);
+                        lab.Foreground = new SolidColorBrush();
+                        lab.Foreground = scb;
+                    }
+                    Canvas.SetTop(lab, i * 13d);
+                    Canvas.SetLeft(lab, j);
+                    canvas.Children.Add(lab);
+                    j += (word.Length + 1) * 7d;
                 }
-                Canvas.SetTop(lab, i * 13d);
-                canvas.Children.Add(lab);
                 i++;
             }
         }
