@@ -8,10 +8,6 @@ using CMK_WebSiteDeveloperStudio.Views;
 using CMK_WebSiteDeveloperStudio.Workers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 
 namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
 {
@@ -80,7 +76,6 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
 
         public AdvancedEditor ReturnFileWindow(ProjectFile file)
         {
-            Canvas canvas = null;
             var win = new AdvancedEditor(new AdvancedEditor_ViewModel(this));
             ((AdvancedEditor_ViewModel)win.DataContext).MyProperty = GetFileWorker(file);
             return win;
