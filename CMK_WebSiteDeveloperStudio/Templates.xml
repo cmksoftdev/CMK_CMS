@@ -47,6 +47,60 @@
         </PlaceHolder>
       </PlaceHolders>
     </Template>
+
+    <Template>
+      <FileTemplate>0</FileTemplate>
+      <Image></Image>
+      <Name>JavaScript in HTML including Scriptfile</Name>
+      <FilePath>Templates\inlinejs.tpt</FilePath>
+      <FileExtension></FileExtension>
+      <PlaceHolders>
+        <PlaceHolder>
+          <Name>Source File</Name>
+          <Symbol>!source</Symbol>
+        </PlaceHolder>
+        <PlaceHolder>
+          <Name>Code</Name>
+          <Symbol>!code</Symbol>
+        </PlaceHolder>
+      </PlaceHolders>
+    </Template>
+
+    <Template>
+      <FileTemplate>0</FileTemplate>
+      <Image></Image>
+      <Name>JavaScript Class</Name>
+      <FilePath>Templates\jsclass.tpt</FilePath>
+      <FileExtension></FileExtension>
+      <PlaceHolders>
+        <PlaceHolder>
+          <Name>Class Name</Name>
+          <Symbol>!classname</Symbol>
+        </PlaceHolder>
+      </PlaceHolders>
+    </Template>
+
+    <Template>
+      <FileTemplate>0</FileTemplate>
+      <Image></Image>
+      <Name>If/Else</Name>
+      <FilePath>Templates\ifelse.tpt</FilePath>
+      <FileExtension></FileExtension>
+      <PlaceHolders>
+        <PlaceHolder>
+          <Name>Boolean Conditions</Name>
+          <Symbol>,,conditions</Symbol>
+        </PlaceHolder>
+        <PlaceHolder>
+          <Name>If Body</Name>
+          <Symbol>,,if</Symbol>
+        </PlaceHolder>
+        <PlaceHolder>
+          <Name>Else Body</Name>
+          <Symbol>,,else</Symbol>
+        </PlaceHolder>
+      </PlaceHolders>
+    </Template>
   
   </Templates>
 </TemplateConfig>

@@ -14,7 +14,10 @@
                 </Grid.RowDefinitions>
                 <Button Grid.Row="0" Content="{Binding B1}" Command="{Binding com.Command}" CommandParameter="HandleSaveClick"></Button>
                 <TextBox Grid.Row="1" AcceptsReturn="True" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
-         ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBox>
+         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         >
+
+            </TextBox>
             </Grid>
     </Grid>
 </Window>
