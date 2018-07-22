@@ -27,9 +27,11 @@ namespace CMK_WebSiteDeveloperStudio.Services
                 ColorBrush = ColorBrushFactory.GetBrush(Color.Black)
             };
             int i = 0;
+            char old_c1 = '\0';
+            char old_c2 = '\0';
             foreach (var c in line)
             {
-                if(i / 2 % 2 == 1 && c == '"')
+                if(i / 2 % 2 == 1 && c == '"' && !(old_c1 == '\\' && old_c2 != '\\'))
                 {
                     substring.Word += c;
                     codeLine.Add(substring);
@@ -74,7 +76,7 @@ namespace CMK_WebSiteDeveloperStudio.Services
                         ColorBrush = ColorBrushFactory.GetBrush(Color.Black)
                     };
                 }
-                else if (c == '"')
+                else if (c == '"' && !(old_c1 == '\\' && old_c2 != '\\'))
                 {
                     i += 2;
                     codeLine.Add(substring);
@@ -89,6 +91,8 @@ namespace CMK_WebSiteDeveloperStudio.Services
                 {
                     substring.Word += c;
                 }
+                old_c2 = old_c1;
+                old_c1 = c;
             }
             codeLine.Add(substring);
             return codeLine;
