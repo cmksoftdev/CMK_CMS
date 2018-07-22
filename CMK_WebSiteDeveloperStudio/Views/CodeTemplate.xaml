@@ -40,7 +40,7 @@
             </ListBox>
             <StackPanel Orientation="Horizontal">
                 <TextBox Width="{Binding ColumWidthHalf}" Text="{Binding Filename}"></TextBox>
-                <Button Width="{Binding ColumWidthHalf}" Command="{Binding com.Command}" CommandParameter="HandleNewFileClick" ></Button>
+                <Button Width="{Binding ColumWidthHalf}" Command="{Binding com.Command}" CommandParameter="HandleInsertTemplateClick" ></Button>
             </StackPanel>
         </StackPanel>
     </Grid>

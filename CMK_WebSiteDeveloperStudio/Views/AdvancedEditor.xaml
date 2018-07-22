@@ -11,12 +11,15 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Content="{Binding B1}" Command="{Binding com.Command}" CommandParameter="HandleSaveClick"></Button>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Content="{Binding B1}" Command="{Binding com.Command}" CommandParameter="HandleSaveClick"></Button>
+            <Button Content="{Binding B2}" Command="{Binding com.Command}" CommandParameter="HandleInsertTemplateClick"></Button>
+        </StackPanel>
         <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <Grid>
             <Canvas x:Name="canvas"/>
             <TextBox Grid.Row="1" AcceptsReturn="True" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Courier New"
-                         >
+                        x:Name="textbox" >
                 <TextBox.Foreground>
                     <SolidColorBrush Color="#FF3376B8"
                          Opacity="0.0" />

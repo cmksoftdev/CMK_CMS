@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CMK_WebSiteDeveloperStudio.ViewModels
 {
-    class CodeTemplate_ViewModel : ViewModelBase
+    public class CodeTemplate_ViewModel : ViewModelBase
     {
         Core core;
 
@@ -59,11 +59,12 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
             }
         }
 
-        public List<Template> Templates
+        public ObservableCollection<Template> Templates
         {
             get
             {
-                return core.GetCodeTemplates();
+                var test = core.GetCodeTemplates();
+                return new ObservableCollection<Template>(core.GetCodeTemplates());
             }
         }
 
@@ -103,10 +104,12 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
         }
 
         public Action CloseAction { get; set; }
+        public Action<string> ReturnFunc { get; set; }
 
         public void HandleInsertTemplateClick()
         {
-            
+            ReturnFunc.Invoke(core.FillTemplate(selectedItem));
+            CloseAction.Invoke();
         }
     }
 }

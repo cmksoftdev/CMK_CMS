@@ -12,7 +12,7 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
 {
     public class Editor_ViewModel : ViewModelBase
     {
-        Core core;
+        protected Core core;
         
         public Editor_ViewModel(Core core)
         {
