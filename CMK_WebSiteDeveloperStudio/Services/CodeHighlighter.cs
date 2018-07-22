@@ -76,7 +76,7 @@ namespace CMK_WebSiteDeveloperStudio.Services
                         ColorBrush = ColorBrushFactory.GetBrush(Color.Black)
                     };
                 }
-                else if (c == '"' && !(old_c1 == '\\' && old_c2 != '\\'))
+                else if (c == '"' && i / 2 % 2 == 0)
                 {
                     i += 2;
                     codeLine.Add(substring);
