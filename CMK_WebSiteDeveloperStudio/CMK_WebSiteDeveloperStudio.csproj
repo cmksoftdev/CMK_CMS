@@ -152,9 +152,15 @@
     <None Include="Templates\html5index.tpt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Templates\ifelse.tpt" />
-    <None Include="Templates\inlinejs.tpt" />
-    <None Include="Templates\jsclass.tpt" />
+    <None Include="Templates\ifelse.tpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\inlinejs.tpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\jsclass.tpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\phpscript.tpt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

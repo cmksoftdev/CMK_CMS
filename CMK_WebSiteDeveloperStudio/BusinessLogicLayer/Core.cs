@@ -146,5 +146,10 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         {
             return fileManager.GetWorker(file);
         }
+
+        public string FillTemplate(Template template)
+        {
+            return templateFunnel.Fill(template);
+        }
     }
 }

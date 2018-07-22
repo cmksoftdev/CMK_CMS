@@ -49,7 +49,7 @@
     </Template>
 
     <Template>
-      <FileTemplate>0</FileTemplate>
+      <FileTemplate>2</FileTemplate>
       <Image></Image>
       <Name>JavaScript in HTML including Scriptfile</Name>
       <FilePath>Templates\inlinejs.tpt</FilePath>
@@ -67,7 +67,7 @@
     </Template>
 
     <Template>
-      <FileTemplate>0</FileTemplate>
+      <FileTemplate>2</FileTemplate>
       <Image></Image>
       <Name>JavaScript Class</Name>
       <FilePath>Templates\jsclass.tpt</FilePath>
@@ -81,7 +81,7 @@
     </Template>
 
     <Template>
-      <FileTemplate>0</FileTemplate>
+      <FileTemplate>2</FileTemplate>
       <Image></Image>
       <Name>If/Else</Name>
       <FilePath>Templates\ifelse.tpt</FilePath>

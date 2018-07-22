@@ -25,6 +25,7 @@ namespace CMK_WebSiteDeveloperStudio.Views
             DataContext = vm;
             InitializeComponent();
             vm.Canvas = this.canvas;
+            vm.TextBox = this.textbox;
         }
     }
 }
