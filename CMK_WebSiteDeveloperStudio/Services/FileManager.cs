@@ -42,14 +42,9 @@ namespace CMK_WebSiteDeveloperStudio.Services
 
         public AdvancedEditor GetEditorForFile(ProjectFile file)
         {
-            if (!editors.Any(x => x.Key == file))
-            {
-                var worker = GetWorker(file);
-                var win = core.ReturnFileWindow(file);
-                editors.Add(file, win);
-                return win;
-            }
-            return editors.FirstOrDefault(x => x.Key == file).Value;
+            var worker = GetWorker(file);
+            var win = core.ReturnFileWindow(file);
+            return win;
         }
 
         public void Remove(ProjectFile file)
