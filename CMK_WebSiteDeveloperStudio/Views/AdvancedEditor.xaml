@@ -5,20 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CMK_WebSiteDeveloperStudio.Views"
         mc:Ignorable="d"
-        Title="AdvancedEditor" Height="300" Width="300">
+        Title="AdvancedEditor" Height="300" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Canvas x:Name="canvas"/>
-        <TextBox Grid.Row="1" AcceptsReturn="True" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
-         ScrollViewer.VerticalScrollBarVisibility="Auto" FontFamily="Courier New"
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid>
+            <Canvas x:Name="canvas"/>
+            <TextBox Grid.Row="1" AcceptsReturn="True" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontFamily="Courier New"
                          >
-            <TextBox.Foreground>
-                <SolidColorBrush Color="#FF3376B8"
+                <TextBox.Foreground>
+                    <SolidColorBrush Color="#FF3376B8"
                          Opacity="0.0" />
-            </TextBox.Foreground>
-            <TextBox.Background>
-                <SolidColorBrush Color="#FF3376B8"
+                </TextBox.Foreground>
+                <TextBox.Background>
+                    <SolidColorBrush Color="#FF3376B8"
                          Opacity="0.0" />
-            </TextBox.Background>
-        </TextBox>
+                </TextBox.Background>
+            </TextBox>
+            </Grid>
+        </ScrollViewer>
+
     </Grid>
 </Window>

@@ -64,6 +64,7 @@
     <Compile Include="BusinessLogicLayer\Core.cs" />
     <Compile Include="Configs\Config.cs" />
     <Compile Include="Configs\ProjectConfig.cs" />
+    <Compile Include="DTOs\ColoredCode.cs" />
     <Compile Include="DTOs\Language.cs" />
     <Compile Include="DTOs\Languages.cs" />
     <Compile Include="DTOs\PlaceHolder.cs" />
@@ -71,10 +72,13 @@
     <Compile Include="DTOs\ProjectFile.cs" />
     <Compile Include="DTOs\Template.cs" />
     <Compile Include="Configs\TemplateConfig.cs" />
+    <Compile Include="Enums\CodeColors.cs" />
     <Compile Include="Enums\WindowEnum.cs" />
+    <Compile Include="Factories\ColorBrushFactory.cs" />
     <Compile Include="Factories\ProjectFactory.cs" />
+    <Compile Include="Services\CodeHighlighter.cs" />
     <Compile Include="Services\FileManager.cs" />
-    <Compile Include="Services\KannWas.cs" />
+    <Compile Include="Services\CanvasKannWas.cs" />
     <Compile Include="Services\ProjectLoader.cs" />
     <Compile Include="Services\ProjectManager.cs" />
     <Compile Include="Services\TemplateFunnel.cs" />
