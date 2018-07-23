@@ -10,6 +10,51 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
     {
         Canvas canvas;
 
+        float columnWidth;
+        public float ColumWidth
+        {
+            get
+            {
+                return columnWidth;
+            }
+            set
+            {
+                columnWidth = value - 30f;
+                ColumWidthThird = (columnWidth) / 3f;
+            }
+        }
+        float columnWidthThird;
+        public float ColumWidthThird
+        {
+            get
+            {
+                return columnWidthThird;
+            }
+            set
+            {
+                columnWidthThird = value;
+                OnPropertyChanged(nameof(ColumWidthThird));
+                OnPropertyChanged(nameof(ColumWidthTwoThird));
+                OnPropertyChanged(nameof(ColumWidthSixth));
+            }
+        }
+
+        public float ColumWidthTwoThird
+        {
+            get
+            {
+                return ColumWidth / 2f;
+            }
+        }
+
+        public float ColumWidthSixth
+        {
+            get
+            {
+                return ColumWidth / 4f;
+            }
+        }
+
         public TextBox TextBox { get; set; }
 
         public Canvas Canvas
@@ -74,6 +119,11 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
              };
             var win = new CodeTemplate(vm);
             win.ShowDialog();
+        }
+
+        public void HandleStartClick()
+        {
+            core.StartBrowser(worker.FileInfos.FilePath);
         }
     }
 }

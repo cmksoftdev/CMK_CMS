@@ -151,5 +151,10 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         {
             return templateFunnel.Fill(template);
         }
+
+        public void StartBrowser(string filePath)
+        {
+            System.Diagnostics.Process.Start("file://" + filePath);
+        }
     }
 }
