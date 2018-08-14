@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Language>
+    <Name>C++</Name>
+    <ConfigFile>cpp.xml</ConfigFile>
+    <FileExtensions>
+      <Ext>cpp</Ext>
+      <Ext>c</Ext>
+      <Ext>hpp</Ext>
+      <Ext>h</Ext>
+    </FileExtensions>
+  </Language>
+</Languages>

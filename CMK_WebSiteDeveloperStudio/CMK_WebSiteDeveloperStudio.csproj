@@ -40,6 +40,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -79,6 +81,7 @@
     <Compile Include="Services\CodeHighlighter.cs" />
     <Compile Include="Services\FileManager.cs" />
     <Compile Include="Services\CanvasKannWas.cs" />
+    <Compile Include="Services\JsonLoader.cs" />
     <Compile Include="Services\ProjectLoader.cs" />
     <Compile Include="Services\ProjectManager.cs" />
     <Compile Include="Services\TemplateFunnel.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="Services\XmlLoader.cs" />
     <Compile Include="ViewModels\AdvancedEditor_ViewModel.cs" />
     <Compile Include="ViewModels\CodeTemplate_ViewModel.cs" />
+    <Compile Include="ViewModels\DataEditor_ViewModel.cs" />
     <Compile Include="ViewModels\Editor_ViewModel.cs" />
     <Compile Include="ViewModels\NewFile_ViewModel.cs" />
     <Compile Include="ViewModels\ProjectViewer_ViewModel.cs" />
@@ -100,6 +104,9 @@
     </Compile>
     <Compile Include="Views\CodeTemplate.xaml.cs">
       <DependentUpon>CodeTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataEditor.xaml.cs">
+      <DependentUpon>DataEditor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DesignViewer.xaml.cs">
       <DependentUpon>DesignViewer.xaml</DependentUpon>
@@ -186,6 +193,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\DataEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DesignViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -229,6 +240,14 @@
     <None Include="CommandProvider.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CodeDescriptions\ProgrammerLanguages.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CodeDescriptions\cpp.xml">
+      <SubType>Designer</SubType>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

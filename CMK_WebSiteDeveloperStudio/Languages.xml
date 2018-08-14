@@ -22,6 +22,9 @@
       <TL>Dateiname</TL>
       <TL>Dateityp</TL>
       <TL>Letzte Änderung</TL>
+      <TL>Projekt erstellen</TL>
+      <TL>Projekt veröffentlichen</TL>
+      <TL>Projekt Starten</TL>
     </Translations>
   </Language>
   <Language>
@@ -45,6 +48,9 @@
       <TL>Filename</TL>
       <TL>Filetype</TL>
       <TL>Last modified</TL>
+      <TL>Projekt erstellen</TL>
+      <TL>Projekt neu erstellen</TL>
+      <TL>Projekt Starten</TL>
     </Translations>
   </Language>
    <Language>
@@ -68,6 +74,9 @@
        <TL>Filename</TL>
        <TL>Filetype</TL>
        <TL>Last modified</TL>
+       <TL>Projekt erstellen</TL>
+       <TL>Projekt neu erstellen</TL>
+       <TL>Projekt Starten</TL>
      </Translations>
    </Language>
  </L>

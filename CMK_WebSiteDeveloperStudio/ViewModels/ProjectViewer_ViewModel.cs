@@ -85,6 +85,9 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
         public string B4 => core.GetTranslation(12);
         public string B5 => core.GetTranslation(13);
         public string B6 => core.GetTranslation(14);
+        public string B7 => core.GetTranslation(18);
+        public string B8 => core.GetTranslation(19);
+        public string B9 => core.GetTranslation(20);
         public string L1 => core.GetTranslation(15);
         public string L2 => core.GetTranslation(16);
         public string L3 => core.GetTranslation(17);
