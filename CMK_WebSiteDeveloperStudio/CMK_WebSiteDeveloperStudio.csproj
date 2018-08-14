@@ -87,6 +87,7 @@
     <Compile Include="Services\TemplateFunnel.cs" />
     <Compile Include="Services\TranslationService.cs" />
     <Compile Include="Factories\WindowFactory.cs" />
+    <Compile Include="Services\TreeViewManager.cs" />
     <Compile Include="Services\XmlLoader.cs" />
     <Compile Include="ViewModels\AdvancedEditor_ViewModel.cs" />
     <Compile Include="ViewModels\CodeTemplate_ViewModel.cs" />
