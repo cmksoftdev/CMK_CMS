@@ -12,26 +12,31 @@ namespace CMK_WebSiteDeveloperStudio.Services
     {
         TreeView treeView;
 
-        private TreeNode tn(XmlLoader.Element element)
+        public TreeViewManager(TreeView treeView)
         {
-            var root = new TreeNode();
+            this.treeView = treeView;
+        }
+
+        private TreeViewItem tn(XmlLoader.Element element)
+        {
+            var root = new TreeViewItem();
             if (element.Value.GetType() == typeof(List<XmlLoader.Element>))
             {
                 foreach (var e in element.Value as List<XmlLoader.Element>)
                 {
-                    var treenode = new TreeNode();
-                    treenode.Text = e.Value.GetType() != typeof(List<XmlLoader.Element>) ? e.Key + " " + e.Value : e.Key;
+                    var treenode = new TreeViewItem();
+                    treenode.Header = e.Value.GetType() != typeof(List<XmlLoader.Element>) ? e.Key + " " + e.Value : e.Key;
                     if (e.Value.GetType() == typeof(List<XmlLoader.Element>))
                     {
-                        treenode.ChildNodes.Add(tn(e));
+                        treenode.Items.Add(tn(e));
                     }
-                    root.ChildNodes.Add(treenode);
+                    root.Items.Add(treenode);
                 }
-                root.Text = element.Key;
+                root.Header = element.Key;
             }
             else
             {
-                root.Text = element.Key + " " + element.Value;
+                root.Header = element.Key + " " + element.Value;
             }
             return root;
         }

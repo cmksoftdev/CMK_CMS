@@ -30,22 +30,25 @@ namespace CMK_WebSiteDeveloperStudio.Services
 
         public string Fill(Template template)
         {
-            using (var reader = File.OpenText(template.FilePath))
-            {
-                var content = reader.ReadToEnd();
-                string oldString = "";
-                string newString = content;
-                foreach (var placeholder in template.PlaceHolders)
+            if (template.FilePath != "")
+                using (var reader = File.OpenText(template.FilePath))
                 {
-                    do
+                    var content = reader.ReadToEnd();
+                    string oldString = "";
+                    string newString = content;
+                    foreach (var placeholder in template.PlaceHolders)
                     {
-                        oldString = newString;
-                        newString = oldString.Replace(placeholder.Symbol, placeholder.Content);
+                        do
+                        {
+                            oldString = newString;
+                            newString = oldString.Replace(placeholder.Symbol, placeholder.Content);
+                        }
+                        while (newString != oldString);
                     }
-                    while (newString != oldString);
+                    return newString;
                 }
-                return newString;
-            }
+            else
+                return "";
         }
     }
 }

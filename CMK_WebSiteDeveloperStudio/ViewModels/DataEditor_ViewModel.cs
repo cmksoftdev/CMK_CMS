@@ -5,11 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using CMK_WebSiteDeveloperStudio.BusinessLogicLayer;
 using CMK.Services;
+using System.Windows.Controls;
+using CMK_WebSiteDeveloperStudio.Services;
+using CMK_WebSiteDeveloperStudio.DTOs;
+using System.Xml.Linq;
 
 namespace CMK_WebSiteDeveloperStudio.ViewModels
 {
     public class DataEditor_ViewModel : Editor_ViewModel
     {
+        TreeViewManager treeViewManager;
+        ProjectFile projectFile;
 
         float columnWidth;
         public float ColumWidth
@@ -26,9 +32,10 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
         }
         float columnWidthThird;
 
-        public DataEditor_ViewModel(Core core) : base(core)
+        public DataEditor_ViewModel(Core core, ProjectFile projectFile) : base(core)
         {
             com = new CommandMethodReflectionProvider(this);
+            this.projectFile = projectFile;
         }
 
         public float ColumWidthThird
@@ -60,6 +67,72 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
             {
                 return ColumWidth / 4f;
             }
+        }
+
+        TreeView treeView;
+        public TreeView TreeView
+        {
+            get
+            {
+                return treeView;
+            }
+            set
+            {
+                if(treeView == null)
+                {
+
+                    this.treeViewManager = new TreeViewManager(value);
+                    var x = XmlLoader.Load(projectFile.FilePath);
+                    treeViewManager.Set(x);
+                }
+                treeView = value;
+                treeView.Items.Refresh();
+                treeView.UpdateLayout();
+                OnPropertyChanged(nameof(TreeView));
+            }
+        }
+
+
+        public void DeleteClick()
+        {
+            if(treeView.SelectedItem!=null)
+            {
+                ((TreeViewItem)((TreeViewItem)treeView.SelectedItem).Parent).Items.Remove(treeView.SelectedItem);
+            }
+        }
+
+        public void CopyClick()
+        {
+            if (treeView.SelectedItem != null)
+            {
+
+            }
+        }
+
+        public void InsertClick()
+        {
+            if (treeView.SelectedItem != null)
+            {
+
+            }
+        }
+
+        public void SaveClick()
+        {
+
+        }
+
+        public void EditClick()
+        {
+            if (treeView.SelectedItem != null)
+            {
+
+            }
+        }
+
+        public void AddClick()
+        {
+
         }
     }
 }

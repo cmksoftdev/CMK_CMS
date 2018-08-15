@@ -24,6 +24,7 @@ namespace CMK_WebSiteDeveloperStudio.Views
         {
             DataContext = vm;
             InitializeComponent();
+            vm.TreeView = treeview;
         }
     }
 }

@@ -12,9 +12,10 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="{Binding B1}" Command="{Binding com.Command}" CommandParameter="HandleSaveClick" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+            <Button Content="{Binding B1}" Command="{Binding com.Command}" CommandParameter="DeleteClick" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
             <Button Content="{Binding B2}" Command="{Binding com.Command}" CommandParameter="HandleInsertTemplateClick" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
             <Button Content="{Binding B3}" Command="{Binding com.Command}" CommandParameter="HandleStartClick" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
         </StackPanel>
+        <TreeView Grid.Row="1" x:Name="treeview"></TreeView>
     </Grid>
 </Window>

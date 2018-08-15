@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CMK_WebSiteDeveloperStudio.ViewModels
 {
@@ -112,7 +113,8 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
 
         public void HandleOpenFileClick()
         {
-            var window = core.GetEditorForFile(SelectedProjectFile);
+
+            Window window = SelectedProjectFile.FilePath.EndsWith(".xml") ? core.GetDataEditorForFile(SelectedProjectFile) as Window : core.GetEditorForFile(SelectedProjectFile) as Window;
             if (!window.IsVisible)
                 window.Show();
             else
