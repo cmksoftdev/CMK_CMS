@@ -101,19 +101,36 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
             }
         }
 
+        TreeViewItem clipboard;
+
+        private TreeViewItem copy(TreeViewItem input)
+        {
+            var output = new TreeViewItem();
+            output.Header = input.Header;
+            if (input.HasItems)
+            {
+                foreach (TreeViewItem it in input.Items)
+                {
+                    var neu = copy(it);
+                    output.Items.Add(neu);
+                }
+            }
+            return output;
+        }
+
         public void CopyClick()
         {
             if (treeView.SelectedItem != null)
             {
-
+                clipboard = copy(treeView.SelectedItem as TreeViewItem);
             }
         }
 
         public void InsertClick()
         {
-            if (treeView.SelectedItem != null)
+            if (treeView.SelectedItem != null && clipboard != null)
             {
-
+                ((TreeViewItem)treeView.SelectedItem).Items.Add(copy(clipboard));
             }
         }
 
