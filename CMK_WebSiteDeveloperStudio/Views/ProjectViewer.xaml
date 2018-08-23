@@ -8,12 +8,17 @@
         Title="{Binding Title}" Height="300" Width="{Binding ColumWidth, Mode=TwoWay}" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B7}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+                <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B8}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+                <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B9}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                 <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B4}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
                 <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B5}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
                 <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B6}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                 <Button Command="{Binding com.Command}" CommandParameter="HandleNewFileClick" Content="{Binding B1}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
                 <Button Command="{Binding com.Command}" CommandParameter="HandleDeleteFileClick" Content="{Binding B2}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
                 <Button Command="{Binding com.Command}" CommandParameter="HandleOpenFileClick" Content="{Binding B3}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>

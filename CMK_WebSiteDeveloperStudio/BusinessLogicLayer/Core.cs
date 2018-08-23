@@ -87,6 +87,13 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
             return win; 
         }
 
+        public DataEditor GetDataEditorForFile(ProjectFile file)
+        {
+            var vm = new DataEditor_ViewModel(this, file);
+            var win = new DataEditor(vm);
+            return win;
+        }
+
         public bool? CreateWindowDialog(WindowEnum winEnum)
         {
             return windowFactory.CreateWindow(winEnum).ShowDialog();
@@ -150,6 +157,11 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         public string FillTemplate(Template template)
         {
             return templateFunnel.Fill(template);
+        }
+
+        public void StartBrowser(string filePath)
+        {
+            System.Diagnostics.Process.Start("file://" + filePath);
         }
     }
 }

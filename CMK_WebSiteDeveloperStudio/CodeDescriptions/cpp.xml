@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageDescription>
+  <Keywords>
+    <Keyword>
+      <Name>int</Name>
+      <Description>32 or 64 bit integer number.</Description>
+      <Link>
+        <Name>Wikipedia</Name>
+        <Action>browser</Action>
+        <Parameter>https://en.wikipedia.org/wiki/Integer_(computer_science)</Parameter>
+      </Link>
+      <Type>datatype</Type>
+    </Keyword>
+    <Keyword>
+      <Name>char</Name>
+      <Description>8 bit symbol.</Description>
+      <Link>
+        <Name>Wikipedia</Name>
+        <Action>browser</Action>
+        <Parameter>https://en.wikipedia.org/wiki/Integer_(computer_science)</Parameter>
+      </Link>
+      <Type>datatype</Type>
+    </Keyword>
+    <Keyword>
+      <Name>bool</Name>
+      <Description>1 bit boolean.</Description>
+      <Link>
+        <Name>Wikipedia</Name>
+        <Action>browser</Action>
+        <Parameter>https://en.wikipedia.org/wiki/Integer_(computer_science)</Parameter>
+      </Link>
+      <Type>datatype</Type>
+    </Keyword>
+    <Keyword>
+      <Name>long</Name>
+      <Description>64 or 128 bit integer number.</Description>
+      <Link>
+        <Name>Wikipedia</Name>
+        <Action>browser</Action>
+        <Parameter>https://en.wikipedia.org/wiki/Integer_(computer_science)</Parameter>
+      </Link>
+      <Type>datatype</Type>
+    </Keyword>
+    <Keyword>
+      <Name>float</Name>
+      <Description>32 or 64 bit floatingpoint number.</Description>
+      <Link>
+        <Name>Wikipedia</Name>
+        <Action>browser</Action>
+        <Parameter>https://en.wikipedia.org/wiki/Integer_(computer_science)</Parameter>
+      </Link>
+      <Type>datatype</Type>
+    </Keyword>
+    <Keyword>
+      <Name>double</Name>
+      <Description>64 or 128 bit floatingpoint number.</Description>
+      <Link>
+        <Name>Wikipedia</Name>
+        <Action>browser</Action>
+        <Parameter>https://en.wikipedia.org/wiki/Integer_(computer_science)</Parameter>
+      </Link>
+      <Type>datatype</Type>
+    </Keyword>
+  </Keywords>
+  <KeywordTypes>
+    <KeywordType>
+      <Type>datatype</Type>
+      <Color>blue</Color>
+      <NextWord>gray</NextWord>
+      <Line></Line>
+    </KeywordType>
+  </KeywordTypes>
+</LanguageDescription>
