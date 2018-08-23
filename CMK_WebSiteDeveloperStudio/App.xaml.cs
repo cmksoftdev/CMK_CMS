@@ -26,11 +26,12 @@ namespace CMK_WebSiteDeveloperStudio
         {
             const string CONFIG_PATH_NAME = "\\CMK WSDS Configs\\";
             const string CONFIG_FILE_NAME = "config.xml";
-            const string DEFAULT_CONFIG = "<Config><Language>DE</Language><ProjectPath>C:\\CMK WSDS Projects\\</ProjectPath></Config>";
+
+            var tempPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + CONFIG_PATH_NAME;
+            var DEFAULT_CONFIG = $"<Config><Language>EN</Language><ProjectPath>{tempPath}\\CMK WSDS Projects\\</ProjectPath></Config>";
 
             try
             {
-                var tempPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + CONFIG_PATH_NAME;
                 if (!Directory.Exists(tempPath))
                 {
                     Directory.CreateDirectory(tempPath);
