@@ -67,6 +67,7 @@
     <Compile Include="Configs\Config.cs" />
     <Compile Include="Configs\ProjectConfig.cs" />
     <Compile Include="DTOs\ColoredCode.cs" />
+    <Compile Include="DTOs\ColorScheme.cs" />
     <Compile Include="DTOs\Language.cs" />
     <Compile Include="DTOs\Languages.cs" />
     <Compile Include="DTOs\PlaceHolder.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Factories\ColorBrushFactory.cs" />
     <Compile Include="Factories\ProjectFactory.cs" />
     <Compile Include="Services\CodeHighlighter.cs" />
+    <Compile Include="Services\CodeSchemeProvider.cs" />
     <Compile Include="Services\FileManager.cs" />
     <Compile Include="Services\CanvasKannWas.cs" />
     <Compile Include="Services\JsonLoader.cs" />
@@ -247,6 +249,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CodeDescriptions\cpp.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CodeDescriptions\xml.xml">
       <SubType>Designer</SubType>
     </Resource>
   </ItemGroup>

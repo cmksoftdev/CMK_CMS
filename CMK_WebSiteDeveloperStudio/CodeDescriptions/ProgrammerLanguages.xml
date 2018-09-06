@@ -10,4 +10,14 @@
       <Ext>h</Ext>
     </FileExtensions>
   </Language>
+  <Language>
+    <Name>XML</Name>
+    <ConfigFile>xml.xml</ConfigFile>
+    <FileExtensions>
+      <Ext>cpp</Ext>
+      <Ext>c</Ext>
+      <Ext>hpp</Ext>
+      <Ext>h</Ext>
+    </FileExtensions>
+  </Language>
 </Languages>
