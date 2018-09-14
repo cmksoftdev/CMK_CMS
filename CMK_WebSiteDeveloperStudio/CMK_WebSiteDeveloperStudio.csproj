@@ -65,12 +65,14 @@
     </Compile>
     <Compile Include="BusinessLogicLayer\Core.cs" />
     <Compile Include="Configs\Config.cs" />
+    <Compile Include="Configs\Language.cs" />
     <Compile Include="Configs\ProjectConfig.cs" />
     <Compile Include="DTOs\ColoredCode.cs" />
     <Compile Include="DTOs\ColorScheme.cs" />
     <Compile Include="DTOs\Language.cs" />
     <Compile Include="DTOs\Languages.cs" />
     <Compile Include="DTOs\PlaceHolder.cs" />
+    <Compile Include="Configs\ProgrammerLanguages.cs" />
     <Compile Include="DTOs\Project.cs" />
     <Compile Include="DTOs\ProjectFile.cs" />
     <Compile Include="DTOs\Template.cs" />
@@ -245,16 +247,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CodeDescriptions\ProgrammerLanguages.xml" />
+    <Resource Include="CodeDescriptions\ProgrammerLanguages.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CodeDescriptions\cpp.xml">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CodeDescriptions\xml.xml">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

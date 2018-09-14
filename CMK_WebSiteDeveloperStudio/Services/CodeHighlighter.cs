@@ -11,13 +11,22 @@ namespace CMK_WebSiteDeveloperStudio.Services
 {
     public class CodeHighlighter
     {
-        private readonly int codeSyntax;
+        private readonly CodeSchemeProvider codeSchemeProvider;
+
+
         private bool comment;
 
-        public CodeHighlighter(int codeSyntax)
+        public CodeHighlighter(CodeSchemeProvider codeSchemeProvider)
         {
-            this.codeSyntax = codeSyntax;
+            this.codeSchemeProvider = codeSchemeProvider;
             comment = false;
+        }
+
+        public List<ColoredCode> GetColoredLine(string line, string extension)
+        {
+            Dictionary<int, List<ColorScheme>> layers;
+
+            return null;
         }
 
         public List<ColoredCode> GetColoredLine(string line)
