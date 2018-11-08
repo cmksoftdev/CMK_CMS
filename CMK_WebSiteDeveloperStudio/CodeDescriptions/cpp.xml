@@ -71,12 +71,12 @@
     </KeywordType>
   </KeywordTypes>
   <Comment>
-    <Opener><![CDATA[<!--]]></Opener>
-    <Closer><![CDATA[-->]]></Closer>
+    <Opener><![CDATA[/*]]></Opener>
+    <Closer><![CDATA[*/]]></Closer>
     <Color>darkgreen</Color>
   </Comment>
   <LineComment>
-    <Opener><![CDATA[<!--]]></Opener>
+    <Opener><![CDATA[//]]></Opener>
     <Color>darkgreen</Color>  
   </LineComment>
 </LanguageDescription>
