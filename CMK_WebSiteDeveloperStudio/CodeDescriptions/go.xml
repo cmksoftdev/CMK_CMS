@@ -57,83 +57,164 @@
       <Name>Plus</Name>
       <Symbol>+</Symbol>
       <Link>
-        <Name></Name>
-        <Action></Action>
-        <parameter></parameter>
+        <Name>golang.org</Name>
+        <Action>browser</Action>
+        <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
       </Link>
     </Operator>
     <Operator>
       <Name>Und</Name>
       <Symbol><![CDATA[&]]></Symbol>
       <Link>
-        <Name></Name>
-        <Action></Action>
-        <parameter></parameter>
+        <Name>golang.org</Name>
+        <Action>browser</Action>
+        <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
       </Link>
     </Operator>
     <Operator>
       <Name>Plus gleich</Name>
       <Symbol>+=</Symbol>
       <Link>
-        <Name></Name>
-        <Action></Action>
-        <parameter></parameter>
+        <Name>golang.org</Name>
+        <Action>browser</Action>
+        <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
       </Link>
     </Operator>
     <Operator>
       <Name></Name>
       <Symbol><![CDATA[&=]]></Symbol>
       <Link>
-        <Name></Name>
-        <Action></Action>
-        <parameter></parameter>
+        <Name>golang.org</Name>
+        <Action>browser</Action>
+        <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
       </Link>
     </Operator>
     <Operator>
       <Name></Name>
       <Symbol><![CDATA[&&]]></Symbol>
       <Link>
-        <Name></Name>
-        <Action></Action>
-        <parameter></parameter>
+        <Name>golang.org</Name>
+        <Action>browser</Action>
+        <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
       </Link>
     </Operator>
     <Operator>
       <Name></Name>
       <Symbol>==</Symbol>
       <Link>
-        <Name></Name>
-        <Action></Action>
-        <parameter></parameter>
+        <Name>golang.org</Name>
+        <Action>browser</Action>
+        <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
       </Link>
     </Operator>
     <Operator>
       <Name></Name>
       <Symbol>!=</Symbol>
       <Link>
-        <Name></Name>
-        <Action></Action>
-        <parameter></parameter>
+        <Name>golang.org</Name>
+        <Action>browser</Action>
+        <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
       </Link>
     </Operator>
     <Operator>
       <Name></Name>
       <Symbol>(</Symbol>
       <Link>
-        <Name></Name>
-        <Action></Action>
-        <parameter></parameter>
+        <Name>golang.org</Name>
+        <Action>browser</Action>
+        <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
       </Link>
     </Operator>
     <Operator>
       <Name></Name>
       <Symbol>)</Symbol>
       <Link>
-        <Name></Name>
-        <Action></Action>
-        <parameter></parameter>
+        <Name>golang.org</Name>
+        <Action>browser</Action>
+        <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
       </Link>
     </Operator>
+      <Operator>
+        <Name>Minus</Name>
+        <Symbol>-</Symbol>
+        <Link>
+          <Name>golang.org</Name>
+          <Action>browser</Action>
+          <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
+        </Link>
+      </Operator>
+      <Operator>
+        <Name></Name>
+        <Symbol><![CDATA[|]]></Symbol>
+        <Link>
+          <Name>golang.org</Name>
+          <Action>browser</Action>
+          <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
+        </Link>
+      </Operator>
+      <Operator>
+        <Name></Name>
+        <Symbol>-=</Symbol>
+        <Link>
+          <Name>golang.org</Name>
+          <Action>browser</Action>
+          <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
+        </Link>
+      </Operator>
+      <Operator>
+        <Name></Name>
+        <Symbol><![CDATA[|=]]></Symbol>
+        <Link>
+          <Name>golang.org</Name>
+          <Action>browser</Action>
+          <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
+        </Link>
+      </Operator>
+      <Operator>
+        <Name></Name>
+        <Symbol><![CDATA[||]]></Symbol>
+        <Link>
+          <Name>golang.org</Name>
+          <Action>browser</Action>
+          <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
+        </Link>
+      </Operator>
+      <Operator>
+        <Name></Name>
+        <Symbol><![CDATA[<]]></Symbol>
+        <Link>
+          <Name>golang.org</Name>
+          <Action>browser</Action>
+          <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
+        </Link>
+      </Operator>
+      <Operator>
+        <Name></Name>
+        <Symbol><![CDATA[<=]]></Symbol>
+        <Link>
+          <Name>golang.org</Name>
+          <Action>browser</Action>
+          <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
+        </Link>
+      </Operator>
+      <Operator>
+        <Name></Name>
+        <Symbol>[</Symbol>
+        <Link>
+          <Name>golang.org</Name>
+          <Action>browser</Action>
+          <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
+        </Link>
+      </Operator>
+      <Operator>
+        <Name></Name>
+        <Symbol>]</Symbol>
+        <Link>
+          <Name>golang.org</Name>
+          <Action>browser</Action>
+          <parameter>https://golang.org/ref/spec#Operators_and_punctuation</parameter>
+        </Link>
+      </Operator>
   </Operators>
   <KeywordTypes>
     <KeywordType>
