@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CMK_WebSiteDeveloperStudio.DTOs
+namespace CMK_WebSiteDeveloperStudio.Configs
 {
     public class ProgrammerLanguages
     {

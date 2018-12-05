@@ -18,7 +18,7 @@ namespace CMK_WebSiteDeveloperStudio.Services
             if (canvas == null || String.IsNullOrEmpty(text))
                 return;
             canvas.Children.Clear();
-            CodeHighlighter ch = new CodeHighlighter(1);
+            CodeHighlighter ch = new CodeHighlighter(new CodeSchemeProvider());
             var font = new FontFamily("Courier New");
             List<List<string>> rowLines = new List<List<string>>();
             var rows = text.Split('\n');
