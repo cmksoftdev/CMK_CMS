@@ -254,9 +254,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CodeDescriptions\ProgrammerLanguages.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <None Include="CodeDescriptions\ProgrammerLanguages.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CodeDescriptions\cpp.xml">
@@ -265,10 +265,10 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CodeDescriptions\xml.xml">
+    <None Include="CodeDescriptions\xml.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CodeDescriptions\go.xml">

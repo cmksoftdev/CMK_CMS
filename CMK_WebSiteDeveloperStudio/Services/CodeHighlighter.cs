@@ -22,11 +22,15 @@ namespace CMK_WebSiteDeveloperStudio.Services
             comment = false;
         }
 
-        public List<ColoredCode> GetColoredLine(string line, string extension)
+        public List<ColoredCode> GetColoredBlocks(string code, string extension)
         {
-            Dictionary<int, List<ColorScheme>> layers;
+            Dictionary<int, List<ColorScheme>> layers = codeSchemeProvider.GetLayers(extension);
+            List<ColoredCode> codeBlock = new List<ColoredCode>();
+            foreach (var c in code)
+            {
 
-            return null;
+            }
+            return codeBlock;
         }
 
         public List<ColoredCode> GetColoredLine(string line)
