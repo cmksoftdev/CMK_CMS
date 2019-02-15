@@ -255,14 +255,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CodeDescriptions\ProgrammerLanguages.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CodeDescriptions\cpp.xml">
+    <None Include="CodeDescriptions\cpp.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="CodeDescriptions\xml.xml">
@@ -271,9 +271,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CodeDescriptions\go.xml">
+    <None Include="CodeDescriptions\go.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
