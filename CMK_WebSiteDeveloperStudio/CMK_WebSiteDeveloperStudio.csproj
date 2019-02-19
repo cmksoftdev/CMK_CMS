@@ -70,6 +70,7 @@
     <Compile Include="DTOs\ColoredCode.cs" />
     <Compile Include="DTOs\ColorScheme.cs" />
     <Compile Include="DTOs\Language.cs" />
+    <Compile Include="DTOs\LanguageDescription.cs" />
     <Compile Include="DTOs\Languages.cs" />
     <Compile Include="DTOs\PlaceHolder.cs" />
     <Compile Include="Configs\ProgrammerLanguages.cs" />

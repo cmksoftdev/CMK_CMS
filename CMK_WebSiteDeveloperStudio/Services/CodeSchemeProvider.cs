@@ -20,9 +20,9 @@ namespace CMK_WebSiteDeveloperStudio.Services
 
         public Dictionary<int, List<ColorScheme>> GetLayers(string fileExtension)
         {
-            var languageConfig = XmlLoader.Load<ColorScheme[]>(programmerLanguages.Languages.FirstOrDefault(x => x.FileExtensions.Contains(fileExtension)).ConfigFile);
+            var languageConfig = XmlLoader.Load<LanguageDescriptions>(programmerLanguages.Languages.FirstOrDefault(x => x.FileExtensions.Contains(fileExtension)).ConfigFile);
             Dictionary<int, List<ColorScheme>> layers = new Dictionary<int, List<ColorScheme>>();
-            foreach (var colorScheme in languageConfig)
+            foreach (var colorScheme in languageConfig.LanguageDescription)
             {
                 if(layers.ContainsKey(colorScheme.Layer))
                 {

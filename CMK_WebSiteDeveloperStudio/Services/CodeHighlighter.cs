@@ -26,9 +26,42 @@ namespace CMK_WebSiteDeveloperStudio.Services
         {
             Dictionary<int, List<ColorScheme>> layers = codeSchemeProvider.GetLayers(extension);
             List<ColoredCode> codeBlock = new List<ColoredCode>();
+            var current = "";
+            ColorScheme activeScheme = null;
             foreach (var c in code)
             {
-
+                current += c;
+                if(activeScheme != null)
+                {
+                    if(current.EndsWith(activeScheme.Closer))
+                    {
+                        codeBlock.Add(new ColoredCode
+                        {
+                            ColorBrush = ColorBrushFactory.GetBrush(activeScheme.Color),
+                            Word = current
+                        });
+                        current = "";
+                        activeScheme = null;
+                    }
+                }
+                else
+                {
+                    foreach(var layer in layers)
+                    {
+                        var broken = false;
+                        foreach (var scheme in layer.Value)
+                        {
+                            if (current.StartsWith(scheme.Opener))
+                            {
+                                activeScheme = scheme;
+                                broken = true;
+                                break;
+                            }
+                        }
+                        if (broken)
+                            break;
+                    }
+                }
             }
             return codeBlock;
         }
