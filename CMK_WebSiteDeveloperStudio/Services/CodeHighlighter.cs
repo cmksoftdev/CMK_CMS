@@ -28,20 +28,31 @@ namespace CMK_WebSiteDeveloperStudio.Services
             List<ColoredCode> codeBlock = new List<ColoredCode>();
             var current = "";
             ColorScheme activeScheme = null;
+            var lines = 0;
+            var shift = 0;
+            var newShift = 0;
+            var newLines = 0;
             foreach (var c in code)
-            {
+            { // TODO: More than one block per line possible!
                 current += c;
                 if(activeScheme != null)
                 {
-                    if(current.EndsWith(activeScheme.Closer))
+                    if (current.EndsWith(activeScheme.Closer))
                     {
+                        var word = "".PadRight(shift, ' ') + current;
                         codeBlock.Add(new ColoredCode
                         {
                             ColorBrush = ColorBrushFactory.GetBrush(activeScheme.Color),
-                            Word = current
+                            Word = word,
+                            Line = lines,
+                            Shift = shift
                         });
                         current = "";
                         activeScheme = null;
+                        shift = newShift;
+                        lines += newLines;
+                        newShift = 0;
+                        newLines = 0;
                     }
                 }
                 else
@@ -51,8 +62,25 @@ namespace CMK_WebSiteDeveloperStudio.Services
                         var broken = false;
                         foreach (var scheme in layer.Value)
                         {
-                            if (current.StartsWith(scheme.Opener))
+                            if (current.EndsWith(scheme.Opener))
                             {
+                                current = new string(current.Take(current.Length - scheme.Opener.Length).ToArray());
+                                if(!string.IsNullOrEmpty(current))
+                                {
+                                    var word = "".PadRight(shift - scheme.Opener.Length, ' ') + current;
+                                    codeBlock.Add(new ColoredCode
+                                    {
+                                        ColorBrush = ColorBrushFactory.GetBrush(Color.Black),
+                                        Word = word,
+                                        Line = lines,
+                                        Shift = shift
+                                    });
+                                    shift = newShift;
+                                    lines += newLines;
+                                    newShift = 0;
+                                    newLines = 0;
+                                }
+                                current = scheme.Opener;
                                 activeScheme = scheme;
                                 broken = true;
                                 break;
@@ -61,6 +89,19 @@ namespace CMK_WebSiteDeveloperStudio.Services
                         if (broken)
                             break;
                     }
+                }
+                if (c == '\n')
+                {
+                    newLines++;
+                    newShift = 0;
+                }
+                else if (c == '\t')
+                {
+                    newShift += 4;
+                }
+                else
+                {
+                    newShift++;
                 }
             }
             return codeBlock;

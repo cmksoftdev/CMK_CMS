@@ -28,7 +28,7 @@ namespace CMK_WebSiteDeveloperStudio.Services
                 lab.FontFamily = font;
                 lab.Content = word.Word;
                 lab.Foreground = word.ColorBrush;
-                //Canvas.SetTop(lab, i * 13.5d - 4d);
+                Canvas.SetTop(lab, word.Line * 13.5d - 4d);
                 //Canvas.SetLeft(lab, j);
                 canvas.Children.Add(lab);
                 //j += (word.Word.Length) * 7.2d - 1.2d;
