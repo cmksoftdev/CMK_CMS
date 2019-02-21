@@ -65,11 +65,11 @@ namespace CMK_WebSiteDeveloperStudio.Test
         [TestMethod]
         public void TestMethod1()
         {
+            var test5 = JsonLoader.Load<dynamic>("json1.json");
             var test1 = XmlLoader.Load<Test>("XMLFile1.xml");
             var test2 = XmlLoader.Load<XElement>("XMLFile1.xml");
             //var test3 = XmlLoader.Load<object[]>("XMLFile1.xml");
             var test4 = Conv(test2);
-            var test5 = JsonLoader.Load<dynamic>("json1.json");
         }
     }
 }

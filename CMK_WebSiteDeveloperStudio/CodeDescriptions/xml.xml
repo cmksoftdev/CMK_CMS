@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageDescription>
+  <ColorScheme>
+    <Opener><![CDATA[<!--]]></Opener>
+    <Closer><![CDATA[-->]]></Closer>
+    <Color>DarkGreen</Color>
+    <Layer>0</Layer>
+  </ColorScheme>
+  <ColorScheme>
+    <Opener><![CDATA[<![CDATA[]]></Opener>
+    <Closer><![CDATA[]]]]><![CDATA[>]]></Closer>
+    <Color>DarkBlue</Color>
+    <ColorContent>Gray</ColorContent>
+    <Layer>0</Layer>
+  </ColorScheme>
+  <ColorScheme>
+    <Opener><![CDATA[<]]></Opener>
+    <Closer><![CDATA[>]]></Closer>
+    <Color>DarkBlue</Color>
+    <ColorContent>DarkRed</ColorContent>
+    <Layer>1</Layer>
+  </ColorScheme>
+  <ColorScheme>
+    <Opener><![CDATA["]]></Opener>
+    <Closer><![CDATA["]]></Closer>
+    <Escape><![CDATA[\]]></Escape>
+    <Color>Blue</Color>
+    <ColorContent>Red</ColorContent>
+    <Layer>0</Layer>
+  </ColorScheme>
+</LanguageDescription>

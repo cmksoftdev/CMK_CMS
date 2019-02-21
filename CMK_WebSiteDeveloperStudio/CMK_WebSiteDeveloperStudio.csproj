@@ -65,11 +65,15 @@
     </Compile>
     <Compile Include="BusinessLogicLayer\Core.cs" />
     <Compile Include="Configs\Config.cs" />
+    <Compile Include="Configs\Language.cs" />
     <Compile Include="Configs\ProjectConfig.cs" />
     <Compile Include="DTOs\ColoredCode.cs" />
+    <Compile Include="DTOs\ColorScheme.cs" />
     <Compile Include="DTOs\Language.cs" />
+    <Compile Include="DTOs\LanguageDescription.cs" />
     <Compile Include="DTOs\Languages.cs" />
     <Compile Include="DTOs\PlaceHolder.cs" />
+    <Compile Include="Configs\ProgrammerLanguages.cs" />
     <Compile Include="DTOs\Project.cs" />
     <Compile Include="DTOs\ProjectFile.cs" />
     <Compile Include="DTOs\Template.cs" />
@@ -79,6 +83,7 @@
     <Compile Include="Factories\ColorBrushFactory.cs" />
     <Compile Include="Factories\ProjectFactory.cs" />
     <Compile Include="Services\CodeHighlighter.cs" />
+    <Compile Include="Services\CodeSchemeProvider.cs" />
     <Compile Include="Services\FileManager.cs" />
     <Compile Include="Services\CanvasKannWas.cs" />
     <Compile Include="Services\JsonLoader.cs" />
@@ -120,6 +125,9 @@
     </Compile>
     <Compile Include="Views\NewFile.xaml.cs">
       <DependentUpon>NewFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewProject.xaml.cs">
+      <DependentUpon>NewProject.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProjectViewer.xaml.cs">
       <DependentUpon>ProjectViewer.xaml</DependentUpon>
@@ -214,6 +222,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\NewProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ProjectViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -243,12 +255,26 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CodeDescriptions\ProgrammerLanguages.xml" />
+    <None Include="CodeDescriptions\ProgrammerLanguages.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CodeDescriptions\cpp.xml">
+    <None Include="CodeDescriptions\cpp.xml">
       <SubType>Designer</SubType>
-    </Resource>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CodeDescriptions\xml.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CodeDescriptions\go.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

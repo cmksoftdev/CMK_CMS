@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using CMK_WebSiteDeveloperStudio.Workers;
 using CMK_WebSiteDeveloperStudio.Services;
 using CMK_WebSiteDeveloperStudio.Views;
+using System.IO;
 
 namespace CMK_WebSiteDeveloperStudio.ViewModels
 {
@@ -76,7 +77,8 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
 
         public void RenderText() 
         {
-            CanvasKannWas.Render(canvas, Text);
+            if(Text != null && worker != null)
+                CanvasKannWas.Render(canvas, Text, Path.GetExtension(worker.FileInfos.FilePath));
         }
 
         public new string Text
