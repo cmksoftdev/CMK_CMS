@@ -27,69 +27,15 @@ namespace CMK_WebSiteDeveloperStudio.Services
             Dictionary<int, List<ColorScheme>> layers = codeSchemeProvider.GetLayers(extension);
             List<ColoredCode> codeBlock = new List<ColoredCode>();
             var current = "";
-            ColorScheme activeScheme = null;
+            var activeSchemes = layers
+                .Select(x => new KeyValuePair<int, ColorScheme>(x.Key, null))
+                .ToDictionary(x => x.Key, x => x.Value);
             var lines = 0;
             var shift = 0;
             var newShift = 0;
             var newLines = 0;
             foreach (var c in code)
-            { // TODO: More than one block per line possible!
-                current += c;
-                if(activeScheme != null)
-                {
-                    if (current.EndsWith(activeScheme.Closer))
-                    {
-                        var word = "".PadRight(shift, ' ') + current;
-                        codeBlock.Add(new ColoredCode
-                        {
-                            ColorBrush = ColorBrushFactory.GetBrush(activeScheme.Color),
-                            Word = word,
-                            Line = lines,
-                            Shift = shift
-                        });
-                        current = "";
-                        activeScheme = null;
-                        shift = newShift;
-                        lines += newLines;
-                        newShift = 0;
-                        newLines = 0;
-                    }
-                }
-                else
-                {
-                    foreach(var layer in layers)
-                    {
-                        var broken = false;
-                        foreach (var scheme in layer.Value)
-                        {
-                            if (current.EndsWith(scheme.Opener))
-                            {
-                                current = new string(current.Take(current.Length - scheme.Opener.Length).ToArray());
-                                if(!string.IsNullOrEmpty(current))
-                                {
-                                    var word = "".PadRight(shift - scheme.Opener.Length, ' ') + current;
-                                    codeBlock.Add(new ColoredCode
-                                    {
-                                        ColorBrush = ColorBrushFactory.GetBrush(Color.Black),
-                                        Word = word,
-                                        Line = lines,
-                                        Shift = shift
-                                    });
-                                    shift = newShift;
-                                    lines += newLines;
-                                    newShift = 0;
-                                    newLines = 0;
-                                }
-                                current = scheme.Opener;
-                                activeScheme = scheme;
-                                broken = true;
-                                break;
-                            }
-                        }
-                        if (broken)
-                            break;
-                    }
-                }
+            {
                 if (c == '\n')
                 {
                     newLines++;
@@ -103,6 +49,89 @@ namespace CMK_WebSiteDeveloperStudio.Services
                 {
                     newShift++;
                 }
+                current += c;
+
+                foreach (var layer in layers)
+                {
+                    if (activeSchemes[layer.Key] != null)
+                    {
+                        if (current.EndsWith(activeSchemes[layer.Key].Closer))
+                        {
+                            if (shift - activeSchemes[layer.Key].Closer.Length > 0)
+                                shift -= activeSchemes[layer.Key].Closer.Length;
+                            else
+                                shift = 0;
+                            var word = "".PadRight(shift, ' ') + current;
+                            codeBlock.Add(new ColoredCode
+                            {
+                                ColorBrush = ColorBrushFactory.GetBrush(activeSchemes[layer.Key].ColorContent),
+                                Word = word,
+                                Line = lines,
+                                Shift = shift
+                            });
+                            current = "";
+                            activeSchemes[layer.Key] = null;
+                            if (newLines > 0)
+                                shift = 0;
+                            shift += newShift;
+                            lines += newLines;
+                            newShift = 0;
+                            newLines = 0;
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        var broken = false;
+                        foreach (var scheme in layer.Value)
+                        {
+                            if (current.EndsWith(scheme.Opener))
+                            {
+                                current = new string(current.Take(current.Length - scheme.Opener.Length).ToArray());
+                                if (!string.IsNullOrEmpty(current))
+                                {
+                                    var word = "".PadRight(shift, ' ') + current;
+                                    codeBlock.Add(new ColoredCode
+                                    {
+                                        ColorBrush = ColorBrushFactory.GetBrush(Color.Black),
+                                        Word = word,
+                                        Line = lines,
+                                        Shift = shift
+                                    });
+                                    lines += newLines;
+                                    if (newLines > 0)
+                                        shift = 0;
+                                    shift += newShift;
+                                    newShift = 0;
+                                    newLines = 0;
+                                }
+                                current = scheme.Opener;
+                                newShift += scheme.Opener.Length;
+                                activeSchemes[layer.Key] = scheme;
+                                broken = true;
+                                break;
+                            }
+                            if (broken)
+                                break;
+                        }
+                    }
+                }
+            }
+            if(!string.IsNullOrEmpty(current))
+            {
+                if (shift - activeSchemes.First(x => x.Value != null).Value.Closer.Length > 0)
+                    shift -= activeSchemes.First(x => x.Value != null).Value.Closer.Length;
+                else
+                    shift = 0;
+                var word = "".PadRight(shift, ' ') + current;
+                codeBlock.Add(new ColoredCode
+                {
+                    ColorBrush = activeSchemes.First(x => x.Value != null).Value != null ? 
+                        ColorBrushFactory.GetBrush(activeSchemes.First(x => x.Value != null).Value.ColorContent) : ColorBrushFactory.GetBrush(Color.Black),
+                    Word = word,
+                    Line = lines,
+                    Shift = shift
+                });
             }
             return codeBlock;
         }
