@@ -57,10 +57,6 @@ namespace CMK_WebSiteDeveloperStudio.Services
                     {
                         if (current.EndsWith(activeSchemes[layer.Key].Closer))
                         {
-                            if (shift - activeSchemes[layer.Key].Closer.Length > 0)
-                                shift -= activeSchemes[layer.Key].Closer.Length;
-                            else
-                                shift = 0;
                             var word = "".PadRight(shift, ' ') + current;
                             codeBlock.Add(new ColoredCode
                             {
@@ -88,6 +84,7 @@ namespace CMK_WebSiteDeveloperStudio.Services
                             if (current.EndsWith(scheme.Opener))
                             {
                                 current = new string(current.Take(current.Length - scheme.Opener.Length).ToArray());
+
                                 if (!string.IsNullOrEmpty(current))
                                 {
                                     var word = "".PadRight(shift, ' ') + current;
@@ -103,6 +100,7 @@ namespace CMK_WebSiteDeveloperStudio.Services
                                     lines += newLines;
                                     if (newLines > 0)
                                         shift = 0;
+                                    shift -= scheme.Opener.Length;
                                     shift += newShift;
                                     newShift = 0;
                                     newLines = 0;
@@ -121,10 +119,6 @@ namespace CMK_WebSiteDeveloperStudio.Services
             }
             if(!string.IsNullOrEmpty(current))
             {
-                if (activeSchemes.FirstOrDefault(x => x.Value != null).Value != null && shift - activeSchemes.First(x => x.Value != null).Value.Closer.Length > 0)
-                    shift -= activeSchemes.First(x => x.Value != null).Value.Closer.Length;
-                else
-                    shift = 0;
                 var word = "".PadRight(shift, ' ') + current;
                 codeBlock.Add(new ColoredCode
                 {
