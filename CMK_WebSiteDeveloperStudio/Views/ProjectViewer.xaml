@@ -11,7 +11,7 @@
             <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                 <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B7}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
                 <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B8}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
-                <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B9}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
+                <Button Command="{Binding com.Command}" CommandParameter="HandleBuildProjectClick" Content="{Binding B9}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                 <Button Command="{Binding com.Command}" CommandParameter="HandleNewClick" Content="{Binding B4}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthThird}"></Button>
@@ -33,13 +33,15 @@
                     <DataTemplate>
                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthTwoThird}"/>
-                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"/>
-                                <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}"/>
+                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Content="{Binding Path=FilePath}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthTwoThird}" HorizontalAlignment="Stretch"/>
-                            <Label Grid.Column="1" Content="{Binding Path=FileType}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}" HorizontalAlignment="Stretch"/>
-                            <Label Grid.Column="2" Content="{Binding Path=LastModified}" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=DataContext.ColumWidthSixth}" HorizontalAlignment="Stretch"/>
+                            <Label Grid.Column="0" Content="{Binding Path=FilePath}" HorizontalAlignment="Stretch"/>
+                            <Label Grid.Column="1" Content="{Binding Path=FileType}" HorizontalAlignment="Stretch"/>
+                            <Label Grid.Column="2" Content="{Binding Path=LastModified}" HorizontalAlignment="Stretch"/>
+                            <TextBox Grid.Column="3" Text="{Binding Path=Tags}" HorizontalAlignment="Stretch"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

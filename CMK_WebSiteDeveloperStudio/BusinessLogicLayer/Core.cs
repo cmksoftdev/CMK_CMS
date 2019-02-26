@@ -20,6 +20,7 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
         private FileManager fileManager;
         private ProjectManager projectManager;
         private TemplateFunnel templateFunnel;
+        private BuildJobInterpreter buildJobInterpreter;
 
         public Config Config { get; }
 
@@ -52,11 +53,27 @@ namespace CMK_WebSiteDeveloperStudio.BusinessLogicLayer
             projectFactory = new ProjectFactory(this);
             projectManager = new ProjectManager(this);
             windowFactory = new WindowFactory(this);
+            buildJobInterpreter = new BuildJobInterpreter(this);
         }
 
         public List<Project> GetProjects()
         {
             return projectLoader.GetProjects();
+        }
+
+        public void BuildProject()
+        {
+            projectManager.Build();
+        }
+
+        public string GetBuildScript(string str)
+        {
+            return buildJobInterpreter.GetCommand(str);
+        }
+
+        public void SaveProject()
+        {
+            projectManager.Save();
         }
 
         public string GetTranslation(int i)

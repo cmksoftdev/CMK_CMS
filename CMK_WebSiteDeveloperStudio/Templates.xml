@@ -15,6 +15,16 @@
     <Template>
       <FileTemplate>1</FileTemplate>
       <Image></Image>
+      <Name>Build Job Script</Name>
+      <FilePath></FilePath>
+      <FileExtension>.build</FileExtension>
+      <PlaceHolders>
+      </PlaceHolders>
+    </Template>
+
+    <Template>
+      <FileTemplate>1</FileTemplate>
+      <Image></Image>
       <Name>HTML 5 Index Site</Name>
       <FilePath>Templates\html5index.tpt</FilePath>
       <FileExtension>.html</FileExtension>

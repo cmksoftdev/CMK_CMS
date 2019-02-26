@@ -60,10 +60,15 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
             }
         }
 
+        public ProjectFile selectedProjectFile;
         public ProjectFile SelectedProjectFile
         {
-            get;
-            set;
+            get => selectedProjectFile;
+            set
+            {                
+                selectedProjectFile = value;
+                core.SaveProject();
+            }
         }
 
         public ObservableCollection<ProjectFile> ProjectFiles
@@ -129,6 +134,11 @@ namespace CMK_WebSiteDeveloperStudio.ViewModels
                 SelectedProjectFile = null;
                 OnPropertyChanged(nameof(ProjectFiles));
             }
+        }
+
+        public void HandleBuildProjectClick()
+        {
+            core.BuildProject();
         }
     }
 }

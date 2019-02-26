@@ -39,5 +39,12 @@ namespace CMK_WebSiteDeveloperStudio.Services
                     }
                 }
         }
+
+        public void Build()
+        {
+            var script = File.ReadAllText(project.Name + "\\Project.build");
+            script = core.GetBuildScript(script);
+            System.Diagnostics.Process.Start("cmd.exe", script);
+        }
     }
 }

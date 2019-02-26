@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageDescription>
+  <ColorScheme>
+    <Opener><![CDATA[##!]]></Opener>
+    <Closer><![CDATA[!##]]></Closer>
+    <ColorContent>Gray</ColorContent>
+    <Layer>0</Layer>
+  </ColorScheme>
+</LanguageDescription>

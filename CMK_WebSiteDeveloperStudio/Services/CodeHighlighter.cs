@@ -121,14 +121,14 @@ namespace CMK_WebSiteDeveloperStudio.Services
             }
             if(!string.IsNullOrEmpty(current))
             {
-                if (shift - activeSchemes.First(x => x.Value != null).Value.Closer.Length > 0)
+                if (activeSchemes.FirstOrDefault(x => x.Value != null).Value != null && shift - activeSchemes.First(x => x.Value != null).Value.Closer.Length > 0)
                     shift -= activeSchemes.First(x => x.Value != null).Value.Closer.Length;
                 else
                     shift = 0;
                 var word = "".PadRight(shift, ' ') + current;
                 codeBlock.Add(new ColoredCode
                 {
-                    ColorBrush = activeSchemes.First(x => x.Value != null).Value != null ? 
+                    ColorBrush = activeSchemes.FirstOrDefault(x => x.Value != null).Value != null ? 
                         ColorBrushFactory.GetBrush(activeSchemes.First(x => x.Value != null).Value.ColorContent) :
                         ColorBrushFactory.GetBrush(Color.Black),
                     Word = word,

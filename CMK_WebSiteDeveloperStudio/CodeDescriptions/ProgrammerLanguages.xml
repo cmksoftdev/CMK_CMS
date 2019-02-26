@@ -18,4 +18,12 @@
       <Ext>.html</Ext>
     </FileExtensions>
   </Language>
+  <Language>
+    <Name>Build Jobs</Name>
+    <ConfigFile>CodeDescriptions\build.xml</ConfigFile>
+    <FileExtensions>
+      <Ext>.build</Ext>
+      <Ext>.cmkb</Ext>
+    </FileExtensions>
+  </Language>
 </Languages>
